@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		
+
+	  	<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/event.css}">
+		</th:block>	
+	</head>
+	
+	<body>	
+		<header></header>
+<div layout:fragment="content" class="wrap-login">
+    <div class="sect-login">
+        <ul class="tab-menu-round">
+            <li class="on">
+                <a href="/user/login/">로그인</a>
+            </li>
+        </ul>
+        <div class="box-login">
+            <h3 class="hidden">회원 로그인</h3>
+            <form id="form1" method="post" action="/" novalidate="novalidate" >/*onsubmit="return false"*/
+            <fieldset>
+                <legend>회원 로그인</legend>
+                <p>아이디 비밀번호를 입력하신 후, 로그인 버튼을 클릭해 주세요.</p>
+                <div class="login">
+                    <input type="text" title="아이디" id="txtUserId" name="txtUserId" data-title="아이디를 " data-message="입력하세요." required="required">
+                    <input type="password" title="패스워드" id="txtPassword" name="txtPassword" data-title="패스워드를 " data-message="입력하세요." required="required">
+                </div>
+                <div class="save-id"> <input type="checkbox" id="loginSet"><label for="save_id">아이디 저장</label></div>
+
+              
+                <button type="submit" id="submit" title="로그인"><span>로그인</span></button>
+                <div class="login-option">
+                    <a href="/user/login/find-account.aspx">아이디 찾기</a>
+                    <a href="/user/login/find-pw.aspx?act=pw">비밀번호 찾기</a>
+                </div>
+            </fieldset>
+            </form>  
+			<div>
+				<a href="javascript:getNaverLoginURL();" class="btn_loginNaver"><img src="https://img.cgv.co.kr/image_gt/login/btn_loginNaver.jpg" alt="네이버 로그인"></a>
+			</div>
+        </div>
+    </div> 
+</div>
+		
+		<footer></footer>		
+	</body>
+</html>		
