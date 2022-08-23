@@ -24,6 +24,14 @@ public class UserController {
 		
 		return mv;
 	}
+	
+	@GetMapping("/join")
+	public ModelAndView join() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/join.html");
+		
+		return mv;
+	}
 
 }
 
