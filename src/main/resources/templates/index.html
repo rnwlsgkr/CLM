@@ -6,6 +6,93 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>index</title>
+		<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/main.css}">
+			<link rel="stylesheet" th:href="@{/css/swiper-bundle.min.css}">
+		</th:block>
+		
+		<th:block layout:fragment="script">
+			<script th:src="@{/js/swiper.min.js}"></script>
+			<script type="text/javascript">
+		        $(document).ready(function(){
+		
+		            $("#btnMovie").click(function(){
+		                $("#movieChart_list").show();
+		                $("#movieChart_list_Reser").hide();
+		                $("#btn_allView_Movie").attr("href", "/movies/?lt=1&ft=0");
+		            });
+		
+		            $("#btnReserMovie").click(function(){
+		                $("#movieChart_list").hide();
+		                $("#movieChart_list_Reser").show();
+		                $("#btn_allView_Movie").attr("href", "/movies/pre-movies.aspx");
+		            });
+		
+		            var movieChartSwiper = new Swiper("#movieChart_list", {
+		
+		                slidesPerView: 5,
+		                spaceBetween: 32,
+		                slidesPerGroup: 5,
+		                loopFillGroupWithBlank: true,
+		                navigation: {
+		                    nextEl: ".swiper-button-next",
+		
+		                    prevEl: ".swiper-button-prev",
+		                },
+		                a11y: {
+		                    prevSlideMessage: '이전 슬라이드',
+		                    nextSlideMessage: '다음 슬라이드',
+		                    slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+		                },
+		            });
+		
+		            var movieChartSwiper2 = new Swiper("#movieChart_list_Reser", {
+		
+		                slidesPerView: 5,
+		                spaceBetween: 32,
+		                slidesPerGroup: 5,
+		                loopFillGroupWithBlank: true,
+		                navigation: {
+		                    nextEl: ".swiper-button-next",
+		
+		                    prevEl: ".swiper-button-prev",
+		                },
+		                a11y: {
+		                    prevSlideMessage: '이전 슬라이드',
+		                    nextSlideMessage: '다음 슬라이드',
+		                    slideLabelMessopenPopupage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+		                },
+		            });
+		
+		            $("#movieChart_list_Reser").hide(); //swiper 랜더링 완료 후 숨기기해야함
+		
+		            var eventSwiper = new Swiper(".event_list", {
+		                autoplay: {
+		                    delay: 2500,
+		                    disableOnInteraction: false,
+		                },
+		                slidesPerView: 3,
+		                spaceBetween: 24,
+		                slidesPerGroup: 3,
+		                loopFillGroupWithBlank: true,
+		                navigation: {
+		                    nextEl: ".swiper-button-next",
+		                    prevEl: ".swiper-button-prev",
+		                },
+		                a11y: {
+		                    prevSlideMessage: '이전 슬라이드',
+		                    nextSlideMessage: '다음 슬라이드',
+		                    slideLabelMessage: '총 {{slidesLength}}장의 슬라이드 중 {{index}}번 슬라이드 입니다.',
+		                },
+		            });
+		
+		            
+		            if (eventSwiper.autoplay.running) {
+		                $('.btn_eventControl').addClass('active');
+		            }
+		        });
+		    </script>
+		</th:block>
 	</head>
 	<body>
 	<html>
@@ -58,27 +145,133 @@
             - 관람제한 (12.png, 15.png, 19.png, all.png, notyet.png)
             - Egg (eggGoldeneggBad.png, eggGoldeneggGood.png, eggGoldeneggGreat.png, eggPreegg.png)
  -->  
-            <div class="movieChartBeScreen_wrap" style="clear: none; float: none; 
-            											background-image: linear-gradient
-            											(to bottom, rgba(255, 255, 255, 1),
-            											 rgba(232, 232, 232, 0.37));
-">
-                <div class="contents" style=" width: 980px; height: 100%; margin: 0 auto;">
-                    <div class="movieChartBeScreen_btn_wrap" style="display: flex;
-																    align-items: center;
-																    justify-content: space-between;
-																    margin-bottom: 20px;">
-                        <div class="tabBtn_wrap" style="display: inline-flex";
->
+<div class="movieChartBeScreen_wrap">
+                <div class="contents">
+                    <div class="movieChartBeScreen_btn_wrap">
+                        <div class="tabBtn_wrap">
                             <h3><a href="#none" class="active" id="btnMovie">무비차트</a></h3>
                             <h3><a href="#none" id="btnReserMovie">상영예정작</a></h3>
                         </div>
-                        <a href="/movies/?lt=1&ft=0" id="btn_allView_Movie" class="btn_allView">전체보기</a>
+                        <a href="/user/movieChart" id="btn_allView_Movie" class="btn_allView">전체보기</a>
                     </div>
 
-                    <div class="swiper movieChart_list" id="movieChart_list" style="overflow: visible; position: relative;">
-                        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
+                    <div class="swiper movieChart_list swiper-container-initialized swiper-container-horizontal" id="movieChart_list">
+                        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
                             
+                                <div class="swiper-slide swiper-slide-movie swiper-slide-active" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86071/86071_320.jpg" alt="불릿 트레인" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가세">
+                                            <div class="dDay_wrap"><span>1</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax"></i>
+                                            
+                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="forDX"></i>
+                                            
+                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx"></i>
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86071" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '불릿 트레인');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030350&amp;MOVIE_CD_GROUP=20030154" onclick="gaEventLog('PC_메인', '무비차트_예매하기','불릿 트레인')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">불릿 트레인</strong>
+                                        
+                                        <span>예매율 20.6%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide swiper-slide-movie swiper-slide-next" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000082/82120/82120_320.jpg" alt="탑건-매버릭" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
+                                            
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="forDX"></i>
+                                            
+                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx"></i>
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=82120" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '탑건-매버릭');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20029859&amp;MOVIE_CD_GROUP=20020357" onclick="gaEventLog('PC_메인', '무비차트_예매하기','탑건-매버릭')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">탑건-매버릭</strong>
+                                        
+                                        <span>예매율 14.4%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86059/86059_320.jpg" alt="육사오" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
+                                            <div class="dDay_wrap"><span>1</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86059" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '육사오');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030431&amp;MOVIE_CD_GROUP=20030112" onclick="gaEventLog('PC_메인', '무비차트_예매하기','육사오')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">육사오</strong>
+                                        
+                                        <span>예매율 13.7%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86058/86058_320.jpg" alt="헌트" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86058" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '헌트');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030111&amp;MOVIE_CD_GROUP=20030111" onclick="gaEventLog('PC_메인', '무비차트_예매하기','헌트')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">헌트</strong>
+                                        
+                                        <span>예매율 11.4%</span>
+                                    </div>
+                                </div>
+                                
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85722/85722_320.jpg" alt="놉" onerror="errorImage(this)">
@@ -97,71 +290,41 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=85722" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '놉');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20029139&MOVIE_CD_GROUP=20029139" onclick="gaEventLog('PC_메인', '무비차트_예매하기','놉')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20029139&amp;MOVIE_CD_GROUP=20029139" onclick="gaEventLog('PC_메인', '무비차트_예매하기','놉')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">놉!!!!</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 87%</span>
-                                        <span>예매율 26.7%</span>
+                                        <strong class="movieName">놉</strong>
+                                        
+                                        <span>예매율 8.9%</span>
                                     </div>
                                 </div>
                                 
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000082/82120/82120_320.jpg" alt="탑건-매버릭" onerror="errorImage(this)">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86081/86081_320.jpg" alt="시맨틱 에러-더 무비" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="forDX"></i>
-                                            
-                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx"></i>
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=82120" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '탑건-매버릭');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20029859&MOVIE_CD_GROUP=20020357" onclick="gaEventLog('PC_메인', '무비차트_예매하기','탑건-매버릭')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">탑건-매버릭</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 99%</span>
-                                        <span>예매율 21.6%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86058/86058_320.jpg" alt="헌트" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            
+                                            <div class="dDay_wrap"><span>8</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
                                             
                                         </div>
                                         <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86058" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '헌트');" class="btn_movieChart_detail">상세보기</a>
+                                            <a href="/movies/detail-view/?midx=86081" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '시맨틱 에러-더 무비');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030111&MOVIE_CD_GROUP=20030111" onclick="gaEventLog('PC_메인', '무비차트_예매하기','헌트')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030186&amp;MOVIE_CD_GROUP=20030186" onclick="gaEventLog('PC_메인', '무비차트_예매하기','시맨틱 에러-더 무비')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">헌트</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 95%</span>
-                                        <span>예매율 16.4%</span>
+                                        <strong class="movieName">시맨틱 에러-더 무비</strong>
+                                        
+                                        <span>예매율 6.9%</span>
                                     </div>
                                 </div>
                                 
@@ -175,129 +338,205 @@
                                         </div>
                                         <div class="screenType_wrap">
                                             
+                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="forDX"></i>
+                                            
                                         </div>
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=83280" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '한산-용의 출현');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030310&MOVIE_CD_GROUP=20023452" onclick="gaEventLog('PC_메인', '무비차트_예매하기','한산-용의 출현')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030310&amp;MOVIE_CD_GROUP=20023452" onclick="gaEventLog('PC_메인', '무비차트_예매하기','한산-용의 출현')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">한산-용의 출현</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 96%</span>
-                                        <span>예매율 8.8%</span>
+                                        
+                                        <span>예매율 4.0%</span>
                                     </div>
                                 </div>
                                 
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86081/86081_320.jpg" alt="시맨틱 에러-더 무비" onerror="errorImage(this)">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86168/86168_320.jpg" alt="[LoL e스포츠]2022 LCK 서머 스플릿 결승전" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>14</span></div>
+                                            <div class="dDay_wrap"><span>5</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
                                             
                                         </div>
                                         <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86081" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '시맨틱 에러-더 무비');" class="btn_movieChart_detail">상세보기</a>
+                                            <a href="/movies/detail-view/?midx=86168" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '[LoL e스포츠]2022 LCK 서머 스플릿 결승전');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030186&MOVIE_CD_GROUP=20030186" onclick="gaEventLog('PC_메인', '무비차트_예매하기','시맨틱 에러-더 무비')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030366&amp;MOVIE_CD_GROUP=20030366" onclick="gaEventLog('PC_메인', '무비차트_예매하기','[LoL e스포츠]2022 LCK 서머 스플릿 결승전')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">시맨틱 에러-더 무비</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 8.1%</span>
+                                        <strong class="movieName">[LoL e스포츠]2022 LCK 서머 스플릿 결승전</strong>
+                                        
+                                        <span>예매율 3.2%</span>
                                     </div>
                                 </div>
                                 
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86063/86063_320.jpg" alt="SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING" onerror="errorImage(this)">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86064/86064_320.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>4</span></div>
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>2</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
                                             
                                         </div>
                                         <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86063" onclick="gaEventLog('PC_메인', '무비차트_영화상세', 'SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING');" class="btn_movieChart_detail">상세보기</a>
+                                            <a href="/movies/detail-view/?midx=86064" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '귀멸의 칼날-아사쿠사 편');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030127&MOVIE_CD_GROUP=20030127" onclick="gaEventLog('PC_메인', '무비차트_예매하기','SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030162&amp;MOVIE_CD_GROUP=20030139" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-아사쿠사 편')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 3.6%</span>
+                                        <strong class="movieName">귀멸의 칼날-아사쿠사 편</strong>
+                                        
+                                        <span>예매율 2.4%</span>
                                     </div>
                                 </div>
                                 
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86071/86071_320.jpg" alt="불릿 트레인" onerror="errorImage(this)">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86008/86008_320.jpg" alt="명탐정 코난-할로윈의 신부" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가세">
-                                            <div class='dDay_wrap'><span>7</span></div>
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
+                                            
                                         
                                         </div>
                                         <div class="screenType_wrap">
-                                            
-                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/imax_white.png" alt="imax"></i>
                                             
                                             <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/forDX_white.png" alt="forDX"></i>
                                             
-                                            <i class="screenType"><img src="https://img.cgv.co.kr/R2014/images/common/logo/screenx_white.png" alt="screenx"></i>
-                                            
                                         </div>
                                         <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86071" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '불릿 트레인');" class="btn_movieChart_detail">상세보기</a>
+                                            <a href="/movies/detail-view/?midx=86008" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '명탐정 코난-할로윈의 신부');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030350&MOVIE_CD_GROUP=20030154" onclick="gaEventLog('PC_메인', '무비차트_예매하기','불릿 트레인')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20029955&amp;MOVIE_CD_GROUP=20029955" onclick="gaEventLog('PC_메인', '무비차트_예매하기','명탐정 코난-할로윈의 신부')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">불릿 트레인</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 3.4%</span>
+                                        <strong class="movieName">명탐정 코난-할로윈의 신부</strong>
+                                        
+                                        <span>예매율 1.8%</span>
                                     </div>
                                 </div>
                                 
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86066/86066_320.jpg" alt="녹턴" onerror="errorImage(this)">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86029/86029_320.jpg" alt="큐브" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>1</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
                                             
                                         </div>
                                         <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86066" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '녹턴');" class="btn_movieChart_detail">상세보기</a>
+                                            <a href="/movies/detail-view/?midx=86029" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '큐브');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030141&MOVIE_CD_GROUP=20030141" onclick="gaEventLog('PC_메인', '무비차트_예매하기','녹턴')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030036&amp;MOVIE_CD_GROUP=20030036" onclick="gaEventLog('PC_메인', '무비차트_예매하기','큐브')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">녹턴</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 1.5%</span>
+                                        <strong class="movieName">큐브</strong>
+                                        
+                                        <span>예매율 1.4%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84879/84879_320.jpg" alt="코코순이" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=84879" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '코코순이');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20027466&amp;MOVIE_CD_GROUP=20027466" onclick="gaEventLog('PC_메인', '무비차트_예매하기','코코순이')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">코코순이</strong>
+                                        
+                                        <span>예매율 1.2%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86118/86118_320.jpg" alt="어웨이크" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>1</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86118" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '어웨이크');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030267&amp;MOVIE_CD_GROUP=20030267" onclick="gaEventLog('PC_메인', '무비차트_예매하기','어웨이크')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">어웨이크</strong>
+                                        
+                                        <span>예매율 1.2%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86121/86121_320.jpg" alt="사랑할 땐 누구나 최악이 된다" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86121" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '사랑할 땐 누구나 최악이 된다');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030270&amp;MOVIE_CD_GROUP=20030270" onclick="gaEventLog('PC_메인', '무비차트_예매하기','사랑할 땐 누구나 최악이 된다')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">사랑할 땐 누구나 최악이 된다</strong>
+                                        
+                                        <span>예매율 1.2%</span>
                                     </div>
                                 </div>
                                 
@@ -306,7 +545,7 @@
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86028/86028_320.jpg" alt="풀타임" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>1</span></div>
+                                            
                                         
                                         </div>
                                         <div class="screenType_wrap">
@@ -315,21 +554,47 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=86028" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '풀타임');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030034&MOVIE_CD_GROUP=20030034" onclick="gaEventLog('PC_메인', '무비차트_예매하기','풀타임')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030034&amp;MOVIE_CD_GROUP=20030034" onclick="gaEventLog('PC_메인', '무비차트_예매하기','풀타임')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">풀타임</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 1.4%</span>
+                                        
+                                        <span>예매율 0.9%</span>
                                     </div>
                                 </div>
                                 
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85465/85465_320.jpg" alt="비상선언" onerror="errorImage(this)">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000081/81889/81889_320.jpg" alt="그녀" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>8</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=81889" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '그녀');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20019689&amp;MOVIE_CD_GROUP=20019689" onclick="gaEventLog('PC_메인', '무비차트_예매하기','그녀')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">그녀</strong>
+                                        
+                                        <span>예매율 0.6%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86066/86066_320.jpg" alt="녹턴" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
                                             
@@ -339,95 +604,17 @@
                                             
                                         </div>
                                         <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=85465" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '비상선언');" class="btn_movieChart_detail">상세보기</a>
+                                            <a href="/movies/detail-view/?midx=86066" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '녹턴');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030124&MOVIE_CD_GROUP=20028465" onclick="gaEventLog('PC_메인', '무비차트_예매하기','비상선언')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">비상선언</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggood.png' alt='Golden Egg good'> 81%</span>
-                                        <span>예매율 1.2%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86030/86030_320.jpg" alt="파로호" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86030" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '파로호');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030037&MOVIE_CD_GROUP=20030037" onclick="gaEventLog('PC_메인', '무비차트_예매하기','파로호')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030141&amp;MOVIE_CD_GROUP=20030141" onclick="gaEventLog('PC_메인', '무비차트_예매하기','녹턴')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">파로호</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 98%</span>
-                                        <span>예매율 1.1%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86046/86046_320.jpg" alt="DC 리그 오브 슈퍼-펫" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            
+                                        <strong class="movieName">녹턴</strong>
                                         
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86046" onclick="gaEventLog('PC_메인', '무비차트_영화상세', 'DC 리그 오브 슈퍼-펫');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030063&MOVIE_CD_GROUP=20030063" onclick="gaEventLog('PC_메인', '무비차트_예매하기','DC 리그 오브 슈퍼-펫')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">DC 리그 오브 슈퍼-펫</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 94%</span>
-                                        <span>예매율 1.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83127/83127_320.jpg" alt="미니언즈2" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=83127" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '미니언즈2');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20022752&MOVIE_CD_GROUP=20022752" onclick="gaEventLog('PC_메인', '무비차트_예매하기','미니언즈2')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">미니언즈2</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 92%</span>
-                                        <span>예매율 0.8%</span>
+                                        <span>예매율 0.6%</span>
                                     </div>
                                 </div>
                                 
@@ -445,190 +632,60 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=85852" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '헤어질 결심');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20029572&MOVIE_CD_GROUP=20029572" onclick="gaEventLog('PC_메인', '무비차트_예매하기','헤어질 결심')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20029572&amp;MOVIE_CD_GROUP=20029572" onclick="gaEventLog('PC_메인', '무비차트_예매하기','헤어질 결심')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">헤어질 결심</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 93%</span>
-                                        <span>예매율 0.7%</span>
+                                        
+                                        <span>예매율 0.6%</span>
                                     </div>
                                 </div>
                                 
                                 <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86064/86064_320.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85465/85465_320.jpg" alt="비상선언" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>8</span></div>
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
+                                            
                                         
                                         </div>
                                         <div class="screenType_wrap">
                                             
                                         </div>
                                         <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86064" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '귀멸의 칼날-아사쿠사 편');" class="btn_movieChart_detail">상세보기</a>
+                                            <a href="/movies/detail-view/?midx=85465" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '비상선언');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030162&MOVIE_CD_GROUP=20030139" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-아사쿠사 편')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">귀멸의 칼날-아사쿠사 편</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 96%</span>
-                                        <span>예매율 0.5%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86078/86078_320.jpg" alt="귀멸의 칼날-남매의 연" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86078" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '귀멸의 칼날-남매의 연');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030183&MOVIE_CD_GROUP=20030183" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-남매의 연')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030124&amp;MOVIE_CD_GROUP=20028465" onclick="gaEventLog('PC_메인', '무비차트_예매하기','비상선언')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
-                                        <strong class="movieName">귀멸의 칼날-남매의 연</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 93%</span>
+                                        <strong class="movieName">비상선언</strong>
+                                        
                                         <span>예매율 0.4%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86059/86059_320.jpg" alt="육사오" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>7</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86059" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '육사오');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030112&MOVIE_CD_GROUP=20030112" onclick="gaEventLog('PC_메인', '무비차트_예매하기','육사오')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">육사오</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 0.3%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85997/85997_320.jpg" alt="외계+인 1부" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=85997" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '외계+인 1부');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030312&MOVIE_CD_GROUP=20029909" onclick="gaEventLog('PC_메인', '무비차트_예매하기','외계+인 1부')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">외계+인 1부</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 87%</span>
-                                        <span>예매율 0.3%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide swiper-slide-movie" style="width: 170.4px; margin-right: 32px;">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86019/86019_320.jpg" alt="굿 럭 투 유, 리오 그랜드" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가세">
-                                            
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86019" onclick="gaEventLog('PC_메인', '무비차트_영화상세', '굿 럭 투 유, 리오 그랜드');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20029985&MOVIE_CD_GROUP=20029985" onclick="gaEventLog('PC_메인', '무비차트_예매하기','굿 럭 투 유, 리오 그랜드')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">굿 럭 투 유, 리오 그랜드</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldenegggreat.png' alt='Golden Egg great'> 91%</span>
-                                        <span>예매율 0.2%</span>
                                     </div>
                                 </div>
                                 
 
                         </div>
 
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
+                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="다음 슬라이드" aria-disabled="false"></div>
+                        <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="이전 슬라이드" aria-disabled="true"></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 
-                    <div class="swiper movieChart_list" id="movieChart_list_Reser" >
-                        <div class="swiper-wrapper">
+                    <div class="swiper movieChart_list swiper-container-initialized swiper-container-horizontal" id="movieChart_list_Reser" style="display: none;">
+                        <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px);">
                             
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86078/86078_320.jpg" alt="귀멸의 칼날-남매의 연" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86078" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '귀멸의 칼날-남매의 연');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030183&MOVIE_CD_GROUP=20030183" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-남매의 연')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">귀멸의 칼날-남매의 연</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 93%</span>
-                                        <span>예매율 0.4%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
+                                <div class="swiper-slide swiper-slide-active" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86064/86064_320.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>8</span></div>
+                                            <div class="dDay_wrap"><span>2</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
@@ -637,24 +694,24 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=86064" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '귀멸의 칼날-아사쿠사 편');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030162&MOVIE_CD_GROUP=20030139" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-아사쿠사 편')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030162&amp;MOVIE_CD_GROUP=20030139" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-아사쿠사 편')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">귀멸의 칼날-아사쿠사 편</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 96%</span>
-                                        <span>예매율 0.5%</span>
+                                        
+                                        <span>예매율 2.4%</span>
                                     </div>
                                 </div>
                                 
-                                <div class="swiper-slide">
+                                <div class="swiper-slide swiper-slide-next" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86081/86081_320.jpg" alt="시맨틱 에러-더 무비" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>14</span></div>
+                                            <div class="dDay_wrap"><span>8</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
@@ -663,24 +720,24 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=86081" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '시맨틱 에러-더 무비');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030186&MOVIE_CD_GROUP=20030186" onclick="gaEventLog('PC_메인', '무비차트_예매하기','시맨틱 에러-더 무비')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030186&amp;MOVIE_CD_GROUP=20030186" onclick="gaEventLog('PC_메인', '무비차트_예매하기','시맨틱 에러-더 무비')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">시맨틱 에러-더 무비</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 8.1%</span>
+                                        
+                                        <span>예매율 6.9%</span>
                                     </div>
                                 </div>
                                 
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86065/86065_320.jpg" alt="귀멸의 칼날-장구저택 편" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>29</span></div>
+                                            <div class="dDay_wrap"><span>23</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
@@ -689,24 +746,24 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=86065" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '귀멸의 칼날-장구저택 편');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030140&MOVIE_CD_GROUP=20030140" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-장구저택 편')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030140&amp;MOVIE_CD_GROUP=20030140" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-장구저택 편')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">귀멸의 칼날-장구저택 편</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 95%</span>
+                                        
                                         <span>예매율 0.0%</span>
                                     </div>
                                 </div>
                                 
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86079/86079_320.jpg" alt="귀멸의 칼날-나타구모산 편" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>40</span></div>
+                                            <div class="dDay_wrap"><span>34</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
@@ -715,24 +772,24 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=86079" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '귀멸의 칼날-나타구모산 편');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            
+                                            <a href="/ticket/?MOVIE_CD=20030184&amp;MOVIE_CD_GROUP=20030184" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-나타구모산 편')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">귀멸의 칼날-나타구모산 편</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
+                                        
                                         <span>예매율 0.0%</span>
                                     </div>
                                 </div>
                                 
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86080/86080_320.jpg" alt="귀멸의 칼날-주합회의·나비저택 편" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>43</span></div>
+                                            <div class="dDay_wrap"><span>37</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
@@ -741,362 +798,24 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=86080" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '귀멸의 칼날-주합회의·나비저택 편');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            
+                                            <a href="/ticket/?MOVIE_CD=20030185&amp;MOVIE_CD_GROUP=20030185" onclick="gaEventLog('PC_메인', '무비차트_예매하기','귀멸의 칼날-주합회의·나비저택 편')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">귀멸의 칼날-주합회의·나비저택 편</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
+                                        
                                         <span>예매율 0.0%</span>
                                     </div>
                                 </div>
                                 
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86066/86066_320.jpg" alt="녹턴" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86066" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '녹턴');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030141&MOVIE_CD_GROUP=20030141" onclick="gaEventLog('PC_메인', '무비차트_예매하기','녹턴')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">녹턴</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 1.5%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86028/86028_320.jpg" alt="풀타임" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86028" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '풀타임');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030034&MOVIE_CD_GROUP=20030034" onclick="gaEventLog('PC_메인', '무비차트_예매하기','풀타임')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">풀타임</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 1.4%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86030/86030_320.jpg" alt="파로호" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86030" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '파로호');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030037&MOVIE_CD_GROUP=20030037" onclick="gaEventLog('PC_메인', '무비차트_예매하기','파로호')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">파로호</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 98%</span>
-                                        <span>예매율 1.1%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86026/86026_320.jpg" alt="리볼버" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86026" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '리볼버');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030021&MOVIE_CD_GROUP=20030021" onclick="gaEventLog('PC_메인', '무비차트_예매하기','리볼버')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">리볼버</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 98%</span>
-                                        <span>예매율 0.1%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86077/86077_320.jpg" alt="기도의 숨결" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86077" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '기도의 숨결');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030182&MOVIE_CD_GROUP=20030182" onclick="gaEventLog('PC_메인', '무비차트_예매하기','기도의 숨결')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">기도의 숨결</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 0.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86044/86044_320.jpg" alt="투란도트 어둠의 왕국" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>1</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86044" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '투란도트 어둠의 왕국');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030059&MOVIE_CD_GROUP=20030059" onclick="gaEventLog('PC_메인', '무비차트_예매하기','투란도트 어둠의 왕국')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">투란도트 어둠의 왕국</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 98%</span>
-                                        <span>예매율 0.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86116/86116_320.jpg" alt="[갤러리&플래터]감각도 돈이 되는, Art Tech" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>2</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86116" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '[갤러리&플래터]감각도 돈이 되는, Art Tech');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">[갤러리&플래터]감각도 돈이 되는, Art Tech</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 0.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86099/86099_320.jpg" alt="[아트&다이닝]나의 사랑, 나의 파리" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>3</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86099" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '[아트&다이닝]나의 사랑, 나의 파리');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030214&MOVIE_CD_GROUP=20030214" onclick="gaEventLog('PC_메인', '무비차트_예매하기','[아트&다이닝]나의 사랑, 나의 파리')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">[아트&다이닝]나의 사랑, 나의 파리</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 0.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86129/86129_320.jpg" alt="스토리업쇼츠 섹션1. 블랙박스" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>3</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86129" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '스토리업쇼츠 섹션1. 블랙박스');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030292&MOVIE_CD_GROUP=20030292" onclick="gaEventLog('PC_메인', '무비차트_예매하기','스토리업쇼츠 섹션1. 블랙박스')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">스토리업쇼츠 섹션1. 블랙박스</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 0.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86131/86131_320.jpg" alt="스토리업쇼츠 섹션2. Yoon Seonghos choice-튀는 아이" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>3</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86131" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '스토리업쇼츠 섹션2. Yoon Seonghos choice-튀는 아이');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030294&MOVIE_CD_GROUP=20030294" onclick="gaEventLog('PC_메인', '무비차트_예매하기','스토리업쇼츠 섹션2. Yoon Seonghos choice-튀는 아이')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">스토리업쇼츠 섹션2. Yoon Seonghos choice-튀는 아이</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 0.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86063/86063_320.jpg" alt="SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
-                                            <div class='dDay_wrap'><span>4</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86063" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', 'SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030127&MOVIE_CD_GROUP=20030127" onclick="gaEventLog('PC_메인', '무비차트_예매하기','SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">SEVENTEEN WORLD TOUR [BE THE SUN] - HOUSTON : LIVE VIEWING</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 3.6%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86100/86100_320.jpg" alt="[요가&브런치]여름을 시원하게, 리프레시 요가" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>4</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86100" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '[요가&브런치]여름을 시원하게, 리프레시 요가');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030215&MOVIE_CD_GROUP=20030215" onclick="gaEventLog('PC_메인', '무비차트_예매하기','[요가&브런치]여름을 시원하게, 리프레시 요가')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">[요가&브런치]여름을 시원하게, 리프레시 요가</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 0.0%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
-                                    <div class="img_wrap" data-scale="false">
-                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86056/86056_320.jpg" alt="[사이다경제_사계강의(여름)] 진짜 해본 사람이 알려주는 SNS 콘텐츠로 돈 버는 법" onerror="errorImage(this)">
-                                        <div class="movieAgeLimit_wrap">
-                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
-                                            <div class='dDay_wrap'><span>6</span></div>
-                                        
-                                        </div>
-                                        <div class="screenType_wrap">
-                                            
-                                        </div>
-                                        <div class="movieChart_btn_wrap">
-                                            <a href="/movies/detail-view/?midx=86056" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '[사이다경제_사계강의(여름)] 진짜 해본 사람이 알려주는 SNS 콘텐츠로 돈 버는 법');" class="btn_movieChart_detail">상세보기</a>
-                                        
-                                            <a href="/ticket/?MOVIE_CD=20030091&MOVIE_CD_GROUP=20030091" onclick="gaEventLog('PC_메인', '무비차트_예매하기','[사이다경제_사계강의(여름)] 진짜 해본 사람이 알려주는 SNS 콘텐츠로 돈 버는 법')" class='btn_movieChart_ticketing'>예매하기</a>
-                                        
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="movie_info_wrap">
-                                        <strong class="movieName">[사이다경제_사계강의(여름)] 진짜 해본 사람이 알려주는 SNS 콘텐츠로 돈 버는 법</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> ?</span>
-                                        <span>예매율 0.1%</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="swiper-slide">
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
                                     <div class="img_wrap" data-scale="false">
                                         <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86071/86071_320.jpg" alt="불릿 트레인" onerror="errorImage(this)">
                                         <div class="movieAgeLimit_wrap">
                                             <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가세">
-                                            <div class='dDay_wrap'><span>7</span></div>
+                                            <div class="dDay_wrap"><span>1</span></div>
                                         
                                         </div>
                                         <div class="screenType_wrap">
@@ -1109,24 +828,388 @@
                                         <div class="movieChart_btn_wrap">
                                             <a href="/movies/detail-view/?midx=86071" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '불릿 트레인');" class="btn_movieChart_detail">상세보기</a>
                                         
-                                            <a href="/ticket/?MOVIE_CD=20030350&MOVIE_CD_GROUP=20030154" onclick="gaEventLog('PC_메인', '무비차트_예매하기','불릿 트레인')" class='btn_movieChart_ticketing'>예매하기</a>
+                                            <a href="/ticket/?MOVIE_CD=20030350&amp;MOVIE_CD_GROUP=20030154" onclick="gaEventLog('PC_메인', '무비차트_예매하기','불릿 트레인')" class="btn_movieChart_ticketing">예매하기</a>
                                         
                                         
                                         </div>
                                     </div>
                                     <div class="movie_info_wrap">
                                         <strong class="movieName">불릿 트레인</strong>
-                                        <span> <img src='https://img.cgv.co.kr/R2014/images/common/egg/eggGoldeneggPreegg.png' alt='Golden Egg Preegg'> 99%</span>
-                                        <span>예매율 3.4%</span>
+                                        
+                                        <span>예매율 20.6%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86059/86059_320.jpg" alt="육사오" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
+                                            <div class="dDay_wrap"><span>1</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86059" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '육사오');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030431&amp;MOVIE_CD_GROUP=20030112" onclick="gaEventLog('PC_메인', '무비차트_예매하기','육사오')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">육사오</strong>
+                                        
+                                        <span>예매율 13.7%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86029/86029_320.jpg" alt="큐브" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>1</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86029" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '큐브');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030036&amp;MOVIE_CD_GROUP=20030036" onclick="gaEventLog('PC_메인', '무비차트_예매하기','큐브')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">큐브</strong>
+                                        
+                                        <span>예매율 1.4%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86118/86118_320.jpg" alt="어웨이크" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>1</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86118" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '어웨이크');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030267&amp;MOVIE_CD_GROUP=20030267" onclick="gaEventLog('PC_메인', '무비차트_예매하기','어웨이크')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">어웨이크</strong>
+                                        
+                                        <span>예매율 1.2%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86120/86120_320.jpg" alt="파라다이스 하이웨이" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>1</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86120" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '파라다이스 하이웨이');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030269&amp;MOVIE_CD_GROUP=20030269" onclick="gaEventLog('PC_메인', '무비차트_예매하기','파라다이스 하이웨이')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">파라다이스 하이웨이</strong>
+                                        
+                                        <span>예매율 0.1%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84879/84879_320.jpg" alt="코코순이" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=84879" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '코코순이');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20027466&amp;MOVIE_CD_GROUP=20027466" onclick="gaEventLog('PC_메인', '무비차트_예매하기','코코순이')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">코코순이</strong>
+                                        
+                                        <span>예매율 1.2%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86121/86121_320.jpg" alt="사랑할 땐 누구나 최악이 된다" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86121" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '사랑할 땐 누구나 최악이 된다');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030270&amp;MOVIE_CD_GROUP=20030270" onclick="gaEventLog('PC_메인', '무비차트_예매하기','사랑할 땐 누구나 최악이 된다')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">사랑할 땐 누구나 최악이 된다</strong>
+                                        
+                                        <span>예매율 1.2%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86068/86068_320.jpg" alt="엔젤 하트" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86068" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '엔젤 하트');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030146&amp;MOVIE_CD_GROUP=20030146" onclick="gaEventLog('PC_메인', '무비차트_예매하기','엔젤 하트')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">엔젤 하트</strong>
+                                        
+                                        <span>예매율 0.2%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86134/86134_320.jpg" alt="[씨네뮤지엄] 제 1강) 레오나르도 다 빈치, 혼자 깨어 있는 자" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86134" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '[씨네뮤지엄] 제 1강) 레오나르도 다 빈치, 혼자 깨어 있는 자');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030297&amp;MOVIE_CD_GROUP=20030297" onclick="gaEventLog('PC_메인', '무비차트_예매하기','[씨네뮤지엄] 제 1강) 레오나르도 다 빈치, 혼자 깨어 있는 자')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">[씨네뮤지엄] 제 1강) 레오나르도 다 빈치, 혼자 깨어 있는 자</strong>
+                                        
+                                        <span>예매율 0.1%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86133/86133_320.jpg" alt="말아" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-12.png" alt="12세 이상세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86133" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '말아');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030296&amp;MOVIE_CD_GROUP=20030296" onclick="gaEventLog('PC_메인', '무비차트_예매하기','말아')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">말아</strong>
+                                        
+                                        <span>예매율 0.1%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86156/86156_320.jpg" alt="인플루엔자" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86156" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '인플루엔자');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030336&amp;MOVIE_CD_GROUP=20030336" onclick="gaEventLog('PC_메인', '무비차트_예매하기','인플루엔자')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">인플루엔자</strong>
+                                        
+                                        <span>예매율 0.1%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86159/86159_320.jpg" alt="우먼" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-15.png" alt="15세 이상세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86159" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '우먼');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030339&amp;MOVIE_CD_GROUP=20030339" onclick="gaEventLog('PC_메인', '무비차트_예매하기','우먼')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">우먼</strong>
+                                        
+                                        <span>예매율 0.0%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86163/86163_320.jpg" alt="작은새와 돼지씨" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
+                                            <div class="dDay_wrap"><span>2</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86163" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '작은새와 돼지씨');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030346&amp;MOVIE_CD_GROUP=20030346" onclick="gaEventLog('PC_메인', '무비차트_예매하기','작은새와 돼지씨')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">작은새와 돼지씨</strong>
+                                        
+                                        <span>예매율 0.0%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86128/86128_320.jpg" alt="[인사이터 X CGV] 매출 10배 늘리는 시장조사와 상품기획" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-all.png" alt="전체세">
+                                            <div class="dDay_wrap"><span>3</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86128" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '[인사이터 X CGV] 매출 10배 늘리는 시장조사와 상품기획');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030291&amp;MOVIE_CD_GROUP=20030291" onclick="gaEventLog('PC_메인', '무비차트_예매하기','[인사이터 X CGV] 매출 10배 늘리는 시장조사와 상품기획')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">[인사이터 X CGV] 매출 10배 늘리는 시장조사와 상품기획</strong>
+                                        
+                                        <span>예매율 0.1%</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="swiper-slide" style="width: 170.4px; margin-right: 32px;">
+                                    <div class="img_wrap" data-scale="false">
+                                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86097/86097_320.jpg" alt="[콘서트&amp;비어]김형석, 너의 뒤에서" onerror="errorImage(this)">
+                                        <div class="movieAgeLimit_wrap">
+                                            <img src="https://img.cgv.co.kr/R2014/images/common/flag/age/grade-19.png" alt="청소년 관람불가세">
+                                            <div class="dDay_wrap"><span>3</span></div>
+                                        
+                                        </div>
+                                        <div class="screenType_wrap">
+                                            
+                                        </div>
+                                        <div class="movieChart_btn_wrap">
+                                            <a href="/movies/detail-view/?midx=86097" onclick="gaEventLog('PC_메인', '상영예정작_영화상세', '[콘서트&amp;비어]김형석, 너의 뒤에서');" class="btn_movieChart_detail">상세보기</a>
+                                        
+                                            <a href="/ticket/?MOVIE_CD=20030212&amp;MOVIE_CD_GROUP=20030212" onclick="gaEventLog('PC_메인', '무비차트_예매하기','[콘서트&amp;비어]김형석, 너의 뒤에서')" class="btn_movieChart_ticketing">예매하기</a>
+                                        
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="movie_info_wrap">
+                                        <strong class="movieName">[콘서트&amp;비어]김형석, 너의 뒤에서</strong>
+                                        
+                                        <span>예매율 0.0%</span>
                                     </div>
                                 </div>
                                 
 
                         </div>
 
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
+                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="다음 슬라이드" aria-disabled="false"></div>
+                        <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="이전 슬라이드" aria-disabled="true"></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 
                 </div>
             </div>
@@ -1136,14 +1219,22 @@
                 <div class="contents">
                 <div class="event_title_wrap">
                     <h3>EVENT</h3>
-                    <a href="/culture-event/event/defaultNew.aspx" id="btn_allView_Event" class="btn_allView">전체보기</a>
-                    <a href="#none" class="btn_eventControl">playStop</a>
+                    <a href="/event/eventSpecial" id="btn_allView_Event" class="btn_allView">전체보기</a>
+                   
                 </div>
                 <div class="event_list_wrap">
-                    <div class="swiper event_list">
-                    <div class="swiper-wrapper">
+                    <div class="swiper event_list swiper-container-initialized swiper-container-horizontal">
+                    <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms; display:flex;">
                         
-                                 <div class="swiper-slide">
+                                 <div class="swiper-slide swiper-slide-active" style="width: 310.667px; margin-right: 24px;">
+                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[블랙폰] VIP시사회');" href="/culture-event/event/detailViewUnited.aspx?seq=35140">
+                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35140/16607883019080.jpg" alt="[블랙폰] VIP시사회" onerror="errorImage(this)"></div>
+                                        <strong>[블랙폰] VIP시사회</strong>
+                                        <span>2022.08.18~2022.08.23</span>
+                                    </a>
+                                </div>
+                            
+                                 <div class="swiper-slide swiper-slide-next" style="width: 310.667px; margin-right: 24px;">
                                     <a onclick="gaEventLog('PC_메인', '이벤트', '씨지밤  VIP 인센티브');" href="/culture-event/event/detailViewUnited.aspx?seq=34804">
                                         <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34804/16576736191670.jpg" alt="씨지밤  VIP 인센티브" onerror="errorImage(this)"></div>
                                         <strong>씨지밤  VIP 인센티브</strong>
@@ -1151,39 +1242,7 @@
                                     </a>
                                 </div>
                             
-                                 <div class="swiper-slide">
-                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[비상선언]필름마크');" href="/culture-event/event/detailViewUnited.aspx?seq=34986">
-                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34986/16588981676960.jpg" alt="[비상선언]필름마크" onerror="errorImage(this)"></div>
-                                        <strong>[비상선언]필름마크</strong>
-                                        <span>2022.07.27~2022.08.21</span>
-                                    </a>
-                                </div>
-                            
-                                 <div class="swiper-slide">
-                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[비상선언] 4DX리미티드 포스터');" href="/culture-event/event/detailViewUnited.aspx?seq=35035">
-                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35035/16594172975450.jpg" alt="[비상선언] 4DX리미티드 포스터" onerror="errorImage(this)"></div>
-                                        <strong>[비상선언] 4DX리미티드 포스터</strong>
-                                        <span>2022.08.02~2022.08.26</span>
-                                    </a>
-                                </div>
-                            
-                                 <div class="swiper-slide">
-                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[비상선언] SX 리미티드 포스터');" href="/culture-event/event/detailViewUnited.aspx?seq=35034">
-                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35034/16594170052290.jpg" alt="[비상선언] SX 리미티드 포스터" onerror="errorImage(this)"></div>
-                                        <strong>[비상선언] SX 리미티드 포스터</strong>
-                                        <span>2022.08.02~2022.08.23</span>
-                                    </a>
-                                </div>
-                            
-                                 <div class="swiper-slide">
-                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[헌트]필름마크');" href="/culture-event/event/detailViewUnited.aspx?seq=35042">
-                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35042/16595025391090.jpg" alt="[헌트]필름마크" onerror="errorImage(this)"></div>
-                                        <strong>[헌트]필름마크</strong>
-                                        <span>2022.08.03~2022.08.28</span>
-                                    </a>
-                                </div>
-                            
-                                 <div class="swiper-slide">
+                                 <div class="swiper-slide" style="width: 310.667px; margin-right: 24px;">
                                     <a onclick="gaEventLog('PC_메인', '이벤트', '[불릿 트레인]필름마크');" href="/culture-event/event/detailViewUnited.aspx?seq=35132">
                                         <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35132/16607155436620.jpg" alt="[불릿 트레인]필름마크" onerror="errorImage(this)"></div>
                                         <strong>[불릿 트레인]필름마크</strong>
@@ -1191,50 +1250,74 @@
                                     </a>
                                 </div>
                             
+                                 <div class="swiper-slide" style="width: 310.667px; margin-right: 24px;">
+                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[불릿 트레인] SX 리미티드 포스터');" href="/culture-event/event/detailViewUnited.aspx?seq=35139">
+                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35139/16608006471450.jpg" alt="[불릿 트레인] SX 리미티드 포스터" onerror="errorImage(this)"></div>
+                                        <strong>[불릿 트레인] SX 리미티드 포스터</strong>
+                                        <span>2022.08.18~2022.09.11</span>
+                                    </a>
+                                </div>
+                            
+                                 <div class="swiper-slide" style="width: 310.667px; margin-right: 24px;">
+                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[불릿트레인] 4DX 리미티드 포스터');" href="/culture-event/event/detailViewUnited.aspx?seq=35138">
+                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35138/16608010500440.jpg" alt="[불릿트레인] 4DX 리미티드 포스터" onerror="errorImage(this)"></div>
+                                        <strong>[불릿트레인] 4DX 리미티드 포스터</strong>
+                                        <span>2022.08.18~2022.09.11</span>
+                                    </a>
+                                </div>
+                            
+                                 <div class="swiper-slide" style="width: 310.667px; margin-right: 24px;">
+                                    <a onclick="gaEventLog('PC_메인', '이벤트', '[귀멸의 칼날: 아사쿠사 편]필름마크');" href="/culture-event/event/detailViewUnited.aspx?seq=35145">
+                                        <div class="img_wrap"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35145/16608016480270.jpg" alt="[귀멸의 칼날: 아사쿠사 편]필름마크" onerror="errorImage(this)"></div>
+                                        <strong>[귀멸의 칼날: 아사쿠사 편]필름마크</strong>
+                                        <span>2022.08.18~2022.09.11</span>
+                                    </a>
+                                </div>
+                            
                        
                         
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    </div>
+                    <div class="swiper-button-next" tabindex="0" role="button" aria-label="다음 슬라이드" aria-disabled="false"></div>
+                    <div class="swiper-button-prev swiper-button-disabled" tabindex="0" role="button" aria-label="이전 슬라이드" aria-disabled="true"></div>
+                    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                 </div>
                 </div>
             </div>
 <!-- E > EVENT -->
 
 <!-- S > 기프트콘 노출 -->
-            <div class="giftcon_wrap">
+<div class="giftcon_wrap">
                 <div class="contents">
                     <ul class="giftcon_list_wrap">
                         
                         <li>
-                            <dl class='giftcon_list'>
-                                <dt>영화관람권<a href='/culture-event/popcorn-store/store-category.aspx?CategoryIdx=2' alt='영화관람권' class='btn_more'>더보기</a></dt>
+                            <dl class="giftcon_list">
+                                <dt>영화관람권<a href="/store/storemain" alt="영화관람권" class="btn_more">더보기</a></dt>
                                
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100253'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/16094706927780.jpg' alt='CLM 영화관람권'></div>
-                                        <div class='giftcon_info_wrap'>
-                                            <span>CLM 영화관람권</span>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16094706927780.jpg" alt="CGV 영화관람권"></div>
+                                        <div class="giftcon_info_wrap">
+                                            <span>CGV 영화관람권</span>
                                             <strong>12,000원</strong>
                                         </div>
                                     </a>
                                 </dd>
                             
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100026'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/15458911951520.jpg' alt='CLM 골드클래스'></div>
-                                        <div class='giftcon_info_wrap'>
-                                            <span>CLM 골드클래스</span>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15458911951520.jpg" alt="CGV 골드클래스"></div>
+                                        <div class="giftcon_info_wrap">
+                                            <span>CGV 골드클래스</span>
                                             <strong>40,000원</strong>
                                         </div>
                                     </a>
                                 </dd>
                             
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100255'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/16105061088530.jpg' alt='4DX관람권'></div>
-                                        <div class='giftcon_info_wrap'>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/16105061088530.jpg" alt="4DX관람권"></div>
+                                        <div class="giftcon_info_wrap">
                                             <span>4DX관람권</span>
                                             <strong>19,000원</strong>
                                         </div>
@@ -1244,13 +1327,13 @@
                             </dl>
                         </li>
                         <li>
-                            <dl class='giftcon_list'>
-                                <dt>기프트카드<a href='/culture-event/popcorn-store/store-category.aspx?CategoryIdx=3' alt='기프트카드' class='btn_more'>더보기</a></dt>
+                            <dl class="giftcon_list">
+                                <dt>기프트카드<a href="/store/storemain" alt="기프트카드" class="btn_more">더보기</a></dt>
                                
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100161'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814124358590.jpg' alt='PACONNIE A형'></div>
-                                        <div class='giftcon_info_wrap'>
+                                    <a href="//store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814124358590.jpg" alt="PACONNIE A형"></div>
+                                        <div class="giftcon_info_wrap">
                                             <span>PACONNIE A형</span>
                                             <strong>금액충전형</strong>
                                         </div>
@@ -1258,9 +1341,9 @@
                                 </dd>
                             
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100162'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814158039890.jpg' alt='PACONNIE B형'></div>
-                                        <div class='giftcon_info_wrap'>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814158039890.jpg" alt="PACONNIE B형"></div>
+                                        <div class="giftcon_info_wrap">
                                             <span>PACONNIE B형</span>
                                             <strong>금액충전형</strong>
                                         </div>
@@ -1268,9 +1351,9 @@
                                 </dd>
                             
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100163'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814162227570.jpg' alt='PACONNIE C형'></div>
-                                        <div class='giftcon_info_wrap'>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15814162227570.jpg" alt="PACONNIE C형"></div>
+                                        <div class="giftcon_info_wrap">
                                             <span>PACONNIE C형</span>
                                             <strong>금액충전형</strong>
                                         </div>
@@ -1280,23 +1363,23 @@
                             </dl>
                         </li>
                         <li>
-                            <dl class='giftcon_list'>
-                                <dt>콤보<a href='/culture-event/popcorn-store/store-category.aspx?CategoryIdx=4' alt='콤보' class='btn_more'>더보기</a></dt>
+                            <dl class="giftcon_list">
+                                <dt>콤보<a href="/store/storemain" alt="콤보" class="btn_more">더보기</a></dt>
                                
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100019'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/15463252009160.jpg' alt='CGV콤보'></div>
-                                        <div class='giftcon_info_wrap'>
-                                            <span>CLM콤보</span>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15463252009160.jpg" alt="CGV콤보"></div>
+                                        <div class="giftcon_info_wrap">
+                                            <span>CGV콤보</span>
                                             <strong>9,000원</strong>
                                         </div>
                                     </a>
                                 </dd>
                             
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100020'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/15463251537260.jpg' alt='더블콤보'></div>
-                                        <div class='giftcon_info_wrap'>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15463251537260.jpg" alt="더블콤보"></div>
+                                        <div class="giftcon_info_wrap">
                                             <span>더블콤보</span>
                                             <strong>12,000원</strong>
                                         </div>
@@ -1304,9 +1387,9 @@
                                 </dd>
                             
                                 <dd>
-                                    <a href='/culture-event/popcorn-store/product-detail.aspx?GG_NO=100073'>
-                                        <div class='img_wrap' data-scale=false><img src='https://img.cgv.co.kr/GiftStore/Product/Pc/List/15464065561050.jpg' alt='스몰세트'></div>
-                                        <div class='giftcon_info_wrap'>
+                                    <a href="/store/storemain">
+                                        <div class="img_wrap" data-scale="false"><img src="https://img.cgv.co.kr/GiftStore/Product/Pc/List/15464065561050.jpg" alt="스몰세트"></div>
+                                        <div class="giftcon_info_wrap">
                                             <span>스몰세트</span>
                                             <strong>6,500원</strong>
                                         </div>
@@ -1319,6 +1402,7 @@
                     </ul>
                 </div>
             </div>
+            <br><br><br><br>
 <!-- E > 기프트콘 노출 -->
 
 

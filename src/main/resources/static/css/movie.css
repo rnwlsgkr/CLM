@@ -1,0 +1,39 @@
+#contaniner {/*overflow:hidden;*/ position:relative; width:100%; z-index:7}
+#contaniner.bg-bricks {background:url(https://img.cgv.co.kr/r2014/images/common/bg/bg_c_bricks.png) repeat-x 0 29px}
+#contaniner .contents{width:980px; height:100%; margin:0 auto}
+
+
+
+#contents {clear:both; padding-bottom:50px;}
+.linemap-wrap {width:100%; background-color:#f1f0e5; border-bottom:1px solid #cacac0;}
+.linemap-wrap .sect-linemap {position:relative; width:980px; height:28px; margin:0 auto;}
+.linemap-wrap .sect-linemap > .sect-bcrumb {position:relative;}
+.linemap-wrap .sect-linemap > .sect-bcrumb ul > li,
+.linemap-wrap .sect-linemap li {float:left;}
+.linemap-wrap .sect-linemap > .sect-bcrumb ul > li {margin-left:12px; padding-left:20px; background:url(https://img.cgv.co.kr/r2014/images/common/ico/ico_arrow.png) no-repeat 0 50%; font-size:12px;}
+.linemap-wrap .sect-linemap > .sect-bcrumb ul > li:first-child {margin-left:0; padding-left:0; background:none;}
+.linemap-wrap .sect-linemap > .sect-bcrumb ul > li:first-child > a > img {margin-top:5px;}
+.linemap-wrap .sect-linemap > .sect-bcrumb ul > li > a,
+.linemap-wrap .sect-linemap > .sect-special ul > li > a {display:block; color:#222; font-size:12px; line-height:28px}
+.linemap-wrap .sect-linemap > .sect-bcrumb ul > li strong{color:#222; text-decoration:underline; line-height:28px;font-weight:500;}
+.linemap-wrap .sect-linemap > .sect-bcrumb ul > li.last{color:#222; font-size:12px; text-decoration:underline; line-height:28px;font-weight:500;}
+*+html .linemap-wrap .sect-linemap > .sect-bcrumb img {margin-top:-4px;}
+.linemap-wrap .sect-linemap > .sect-special {overflow:hidden; position:absolute; top:0; right:0;}
+.linemap-wrap .sect-linemap > .sect-special ul > li {padding:0 10px; border-right:1px solid #acaca3;}
+.linemap-wrap .sect-linemap > .sect-special ul > li:first-child {border-left:1px solid #acaca3;}
+.linemap-wrap .sect-linemap > .sect-special ul > li > a {color:#666; font-weight:500; font-size:11px; text-align:center;}
+
+/* 7월 28- 8월 31일 특별관 클럽 이벤트용 CSS 주석제거로 사용가능, 8.31이후로는 css삭제*/
+/* .linemap-wrap .sect-linemap > .sect-special ul li:first-child+li a, 노원 town 추가로 인해 주석처리함 0617 */
+.linemap-wrap .sect-linemap > .sect-special ul li a.specialclub {
+    background: url(https://img.cgv.co.kr/r2014/images/common/ico/ico_club_service.png) no-repeat 100% 50%;
+    padding-right:25px;
+text-align: left;
+
+}
+.linemap-wrap .sect-linemap > .sect-special ul li.dsr_btn +li a {color:#666;background:none;padding: 0 20px; width: auto; text-align: center;}
+/*141114 포토티켓 추가*/
+.linemap-wrap .sect-linemap > .sect-special ul > li a.photi {
+	background: url(http://img.cgv.co.kr/R2014/images/common/ico/ico_photi.png) no-repeat 100% 50%;
+	padding-right:25px;
+}
