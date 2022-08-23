@@ -6,6 +6,11 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>index</title>
+		<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/main.css}">
+			<link rel="stylesheet" th:href="@{/css/movie.css}">
+			<link rel="stylesheet" th:href="@{/css/rest.css}">
+		</th:block>
 	</head>
 	<body>
 	<div layout:fragment="content" id="contaniner" class=""><!-- 벽돌 배경이미지 사용 시 class="bg-bricks" 적용 / 배경이미지가 없을 경우 class 삭제  -->
