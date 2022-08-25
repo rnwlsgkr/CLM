@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		
+
+	  	<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+			<link rel="stylesheet" th:href="@{/css/module.css}">
+			<link rel="stylesheet" th:href="@{/css/layout.css}">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+		</th:block>	
+	</head>
+	
+	<body>
+
+<div layout:fragment="content" id="contaniner" class="">
+        
+
+<!-- Contents Area -->
+<div id="contents" class="">        
+            
+<!-- Contents Start -->			
+
+<!-- 실컨텐츠 시작 -->
+<div class="wrap-movie-detail" id="select_main">
+
+
+<div class="sect-base-movie">
+    <h3><strong>놉</strong>기본정보</h3>
+    <div class="box-image">
+        <a href="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85722/85722_1000.jpg" title="포스터 크게 보기 새창" target="_blank">
+            <span class="thumb-image"> 
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85722/85722_320.jpg" alt="놉 포스터 새창" onerror="errorImage(this)"/>
+                <span class="ico-posterdetail">포스터 크게 보기</span>
+                <span class="ico-grade grade-12"> 12세 이상</span>
+            </span> 
+        </a> 
+    </div>
+    <div class="box-contents">
+        <div class="title"> 
+            <strong>놉</strong>
+            <em class="round lightblue"><span>현재상영중</span></em>
+            
+            
+            <p>Nope</p>
+        </div>
+        <div class="score"> 
+            <strong class="percent">예매율&nbsp;<span>6.6%</span></strong>
+            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 -->            
+            <div class='egg-gage small'>
+                                            <span class='egg good'></span>
+                                            <span class='percent'>84%</span>
+                                        </div>
+        </div>
+        <!-- 떨어지는 얘 이전 요소에 class=on을 넣는다 -->
+        <div class="spec">
+            <dl>
+                <dt>감독 :&nbsp;</dt>
+                <dd>
+                    
+                        
+                        <a href="/movies/persons/?pidx=117125">조던 필</a>                    
+                        
+                </dd>
+                
+                <dd>
+                    
+                </dd>
+
+                <dt>&nbsp;/ 배우 :&nbsp;</dt>
+                <dd class="on">
+                    
+                        
+                        <a href="/movies/persons/?pidx=117126">다니엘 칼루야</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=15643">케케 파머</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=116168">스티븐 연</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=108593">마이클 윈콧</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=122859">브랜든 페레아</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=122860">바비 페레이라</a>                    
+                        
+                </dd>
+
+                <dt>장르 :&nbsp;미스터리,&nbsp;호러</dt> 
+                <dd></dd>
+                <dt>&nbsp;/ 기본 :&nbsp;</dt>
+                <dd class="on">12세 이상,&nbsp;130분,&nbsp;미국</dd>
+                <dt>개봉 :&nbsp;</dt>
+                <dd class="on">2022.08.17</dd>
+
+
+            
+
+            </dl>
+        </div>
+        <span class="screentype">
+        
+                <a href="#" class="imax" title="IMAX 상세정보 바로가기" data-regioncode="07">IMAX</a>
+            
+        </span>
+
+        <span class="like">
+            <!-- 2020.05.07 영화찜하기 -> 프리에그 선택 변경(조회하여 노출) -->
+            <a class="link-count" href="javascript:void (0);"><i class="sprite_preegg btn_md default"></i>프리에그</a>
+        
+            <a class="link-reservation" href="/ticket/?MOVIE_CD=20029139&MOVIE_CD_GROUP=20029139">예매</a> 
+        
+        </span>
+
+    </div>
+</div>
+<!-- .sect-base -->
+
+
+
+<script type="text/javascript">
+    _TRK_PNC = "82120";
+    _TRK_PNC_NM = "탑건-매버릭";
+    _TRK_PNG = "영화";
+    _TRK_PI = "PDV";
+    _TRK_CP = "/영화/영화상세/{0}/탑건-매버릭";
+</script>
+
+
+    <div class="cols-content" id="menu">
+        <div class="col-detail">
+            <!-- 메뉴가 선택되면 a 에 title="선택" 이라고 넣는다 -->
+            <ul class="tab-menu">
+                <li class="on"><a title="현재 선택됨" href="/movies/detail-view/?midx=85722#menu">주요정보 </a></li>             
+                <li><a href="/movies/detail-view/trailer.aspx?midx=85722#menu">트레일러</a></li>
+                <li><a href="/movies/detail-view/still-cut.aspx?midx=85722#menu">스틸컷</a></li>
+                <li><a href="/movies/detail-view/?midx=85722#commentReg">평점/리뷰</a></li>               
+                <li class="last"><a href="/movies/detail-view/show-times.aspx?midx=85722#menu">상영시간표</a></li>
+            </ul>
+            <div class="sect-story-movie">
+                <p><strong>그것은 우리 위에 있다.</strong><br />
+거대하고, 주목받길 원하고, 미쳤다.<br />
+나쁜 기적이라는 것도 있을까?</p>
+            </div>
+            <!-- .sect-story -->
+            <!-- 2020.05.07 성별예매분포, 연령별예매분포 UI 변경 -->
+            <div id="ctl00_PlaceHolderContent_Section_Chart" class="sect-graph sect-graph-emotion">
+                <ul class="graph">
+                    <li>
+                        <strong>성별 예매 분포</strong>
+                        <div id="jqplot_sex" class="chart"></div>
+                    </li>
+                    <li>
+                        <strong>연령별 예매 분포</strong>
+                        <div id="jqplot_age" class="chart"></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- .sect-graph -->
+
+            <div class="movie-detail-ad">
+                <iframe src="http://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/sub@SponsorBar_800" width="800" height="90" title="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" name="SponsorBar_800" id="SponsorBar_800"></iframe>
+            </div>
+            <!-- .sect-staff -->
+            <div id="ctl00_PlaceHolderContent_Section_Trailer" class="sect-trailer">
+                <div class="heading">
+                    <h4>트레일러</h4><span id="ctl00_PlaceHolderContent_TrailerTotalCount" class="count">9건</span><a class="link-more" href="trailer.aspx?midx=85722">더보기</a>
+                </div>
+                <ul>
+                <!-- 사진 동영상 조회 -->
+                
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205852">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/85722/85722205852_1024.jpg" alt="[놉]파이널 예고편" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205852">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    파이널 예고편
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.23</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205431">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/85722/85722205431_1024.jpg" alt="[놉]IMAX 인 더 스카이 영상" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205431">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    IMAX 인 더 스카이 영상
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.05</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205321">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/85722/85722205321_1024.jpg" alt="[놉]해외 리뷰 스팟" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205321">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    해외 리뷰 스팟
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.03</span>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div><!-- .sect-trailer -->
+            <div id="ctl00_PlaceHolderContent_Section_Still_Cut" class="sect-stillcut">
+                <div class="heading">
+                    <h4>스틸컷</h4><span class="count"><strong id="stillcut_current">1</strong>/17건</span><a class="link-more" href="still-cut.aspx?midx=85722">더보기</a>
+                </div>
+                <div class="slider-wrap">
+                    <div class="slider" id="still_motion">
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205317_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205251_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205250_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205249_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205248_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205247_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205246_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205245_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205244_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205243_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205242_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722205075_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722204879_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722203988_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722203987_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722203986_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000085/85722/85722200813_727.jpg" alt="놉" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <button type="button" class="btn-prev">이전 페이지 이동</button>
+                        <button type="button" class="btn-next">다음 페이지 이동</button>
+                    </div>
+                </div>
+            </div>
+</div>
+    <span style="display:none" class="modifyCommentDummy"></span>
+</div>
+         
+<!--/ Contents End -->
+</div>
+		 
+	<footer></footer>		
+</body>
+</html>	

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		
+
+	  	<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+			<link rel="stylesheet" th:href="@{/css/module.css}">
+			<link rel="stylesheet" th:href="@{/css/layout.css}">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+		</th:block>	
+	</head>
+	
+	<body>
+
+<div layout:fragment="content" id="contaniner" class="">
+        
+
+<!-- Contents Area -->
+<div id="contents" class="">        
+            
+<!-- Contents Start -->			
+
+<!-- 실컨텐츠 시작 -->
+<div class="wrap-movie-detail" id="select_main">
+
+
+<div class="sect-base-movie">
+    <h3><strong>불릿 트레인</strong>기본정보</h3>
+    <div class="box-image">
+        <a href="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86071/86071_1000.jpg" title="포스터 크게 보기 새창" target="_blank">
+            <span class="thumb-image"> 
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86071/86071_320.jpg" alt="불릿 트레인 포스터 새창" onerror="errorImage(this)"/>
+                <span class="ico-posterdetail">포스터 크게 보기</span>
+                <span class="ico-grade grade-19"> 청소년 관람불가</span>
+            </span> 
+        </a> 
+    </div>
+    <div class="box-contents">
+        <div class="title"> 
+            <strong>불릿 트레인</strong>
+            <em class="round lightblue"><span>현재상영중</span></em>
+            
+            
+            <p>Bullet Train</p>
+        </div>
+        <div class="score"> 
+            <strong class="percent">예매율&nbsp;<span>14.8%</span></strong>
+            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 -->            
+            <div class='egg-gage small'>
+                                            <span class='egg good'></span>
+                                            <span class='percent'>71%</span>
+                                        </div>
+        </div>
+        <!-- 떨어지는 얘 이전 요소에 class=on을 넣는다 -->
+        <div class="spec">
+            <dl>
+                <dt>감독 :&nbsp;</dt>
+                <dd>
+                    
+                        
+                        <a href="/movies/persons/?pidx=115517">데이빗 레이치</a>                    
+                        
+                </dd>
+                
+                <dd>
+                    
+                </dd>
+
+                <dt>&nbsp;/ 배우 :&nbsp;</dt>
+                <dd class="on">
+                    
+                        
+                        <a href="/movies/persons/?pidx=412">브래드 피트</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=114014">조이 킹</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=26886">애런 존슨</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=118094">브라이언 타이리 헨리</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=123143">배드 버니</a>                    
+                        
+                </dd>
+
+                <dt>장르 :&nbsp;액션</dt> 
+                <dd></dd>
+                <dt>&nbsp;/ 기본 :&nbsp;</dt>
+                <dd class="on">청소년 관람불가,&nbsp;126분,&nbsp;미국</dd>
+                <dt>개봉 :&nbsp;</dt>
+                <dd class="on">2022.08.24</dd>
+
+
+            
+
+            </dl>
+        </div>
+        <span class="screentype">
+        
+                <a href="#" class="imax" title="IMAX 상세정보 바로가기" data-regioncode="07">IMAX</a>
+            
+                <a href="#" class="forDX" title="4DX 상세정보 바로가기" data-regioncode="4D14">4DX</a>
+            
+        </span>
+
+        <span class="like">
+            <!-- 2020.05.07 영화찜하기 -> 프리에그 선택 변경(조회하여 노출) -->
+            <a class="link-count" href="javascript:void (0);"><i class="sprite_preegg btn_md default"></i>프리에그</a>
+        
+            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030350&MOVIE_CD_GROUP=20030154">예매</a> 
+        
+        </span>
+
+    </div>
+</div>
+<!-- .sect-base -->
+
+
+
+<script type="text/javascript">
+    _TRK_PNC = "82120";
+    _TRK_PNC_NM = "탑건-매버릭";
+    _TRK_PNG = "영화";
+    _TRK_PI = "PDV";
+    _TRK_CP = "/영화/영화상세/{0}/탑건-매버릭";
+</script>
+
+
+    <div class="cols-content" id="menu">
+        <div class="col-detail">
+            <!-- 메뉴가 선택되면 a 에 title="선택" 이라고 넣는다 -->
+            <ul class="tab-menu">
+                <li class="on"><a title="현재 선택됨" href="/movies/detail-view/?midx=86071#menu">주요정보 </a></li>             
+                <li><a href="/movies/detail-view/trailer.aspx?midx=86071#menu">트레일러</a></li>
+                <li><a href="/movies/detail-view/still-cut.aspx?midx=86071#menu">스틸컷</a></li>
+                <li><a href="/movies/detail-view/?midx=86071#commentReg">평점/리뷰</a></li>               
+                <li class="last"><a href="/movies/detail-view/show-times.aspx?midx=86071#menu">상영시간표</a></li>
+            </ul>
+            <div class="sect-story-movie">
+                <strong>&quot;탑승을 환영합니다&quot;<br />
+승차는 자유, 하차는 불가?!<br />
+초고속 열차에서 벌어지는 &#39;레이디버그&rsquo;(브래드 피트)와 고스펙 킬러들의 피 튀기는 전쟁!</strong><br />
+<br />
+운이 없기로 유명한 킬러 &#39;레이디버그&rsquo;(브래드 피트)는 초고속 열차에 탑승해<br />
+의문의 서류 가방을 가져오라는 미션을 받는다. 생각보다 쉽게 미션을 클리어한 후 열차에서<br />
+내리려는 그를 가로막는 것이 있었으니, 그것은 바로 전세계에서 몰려든 초특급 킬러들!<br />
+열차에서 내릴 수 없다면 목숨을 걸고 가방을 지켜야만 한다.<br />
+과연 &#39;레이디버그&#39;는 무사히 열차에서 내려 미션을 완수할 수 있을까?<br />
+<br />
+<strong>8월, 누구도 멈출 수 없는 논스톱 액션 블록버스터 &lt;불릿 트레인&gt;에 탑승하라!</strong>
+            </div>
+            <!-- .sect-story -->
+            <!-- 2020.05.07 성별예매분포, 연령별예매분포 UI 변경 -->
+            <div id="ctl00_PlaceHolderContent_Section_Chart" class="sect-graph sect-graph-emotion">
+                <ul class="graph">
+                    <li>
+                        <strong>성별 예매 분포</strong>
+                        <div id="jqplot_sex" class="chart"></div>
+                    </li>
+                    <li>
+                        <strong>연령별 예매 분포</strong>
+                        <div id="jqplot_age" class="chart"></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- .sect-graph -->
+
+            <div class="movie-detail-ad">
+                <iframe src="http://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/sub@SponsorBar_800" width="800" height="90" title="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" name="SponsorBar_800" id="SponsorBar_800"></iframe>
+            </div>
+            <!-- .sect-staff -->
+            <div id="ctl00_PlaceHolderContent_Section_Trailer" class="sect-trailer">
+                <div class="heading">
+                    <h4>트레일러</h4><span id="ctl00_PlaceHolderContent_TrailerTotalCount" class="count">6건</span><a class="link-more" href="trailer.aspx?midx=86071">더보기</a>
+                </div>
+                <ul>
+                <!-- 사진 동영상 조회 -->
+                
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205881">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86071/86071205881_1024.jpg" alt="[불릿 트레인]파이널 예고편" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205881">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    파이널 예고편
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.24</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205678">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86071/86071205678_1024.jpg" alt="[불릿 트레인]만약에...? 게임 영상" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205678">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    만약에...? 게임 영상
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.17</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205121">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86071/86071205121_1024.jpg" alt="[불릿 트레인]기차 예절 영상" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205121">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    기차 예절 영상
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.07.28</span>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div><!-- .sect-trailer -->
+            <div id="ctl00_PlaceHolderContent_Section_Still_Cut" class="sect-stillcut">
+                <div class="heading">
+                    <h4>스틸컷</h4><span class="count"><strong id="stillcut_current">1</strong>/5건</span><a class="link-more" href="still-cut.aspx?midx=86071">더보기</a>
+                </div>
+                <div class="slider-wrap">
+                    <div class="slider" id="still_motion">
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86071/86071205880_727.jpg" alt="불릿 트레인" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86071/86071205879_727.jpg" alt="불릿 트레인" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86071/86071205878_727.jpg" alt="불릿 트레인" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86071/86071205877_727.jpg" alt="불릿 트레인" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86071/86071205876_727.jpg" alt="불릿 트레인" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+
+                        
+
+                        
+                        <button type="button" class="btn-prev">이전 페이지 이동</button>
+                        <button type="button" class="btn-next">다음 페이지 이동</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ./sect-stillcut -->
+     </div>       
+	</div>
+</div>
+    <span style="display:none" class="modifyCommentDummy"></span>
+</div>
+         
+<!--/ Contents End -->
+</div>
+		 
+	<footer></footer>		
+</body>
+</html>	
