@@ -8,13 +8,17 @@
 		<title></title>
 		
 
-	  	<th:block layout:fragment="css">
-			<link rel="stylesheet" th:href="@{/css/event.css}">
+		<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/main.css}">
+			<link rel="stylesheet" th:href="@{/css/movie.css}">
+			<link rel="stylesheet" th:href="@{/css/rest.css}">
+			<link rel="stylesheet" th:href="@{/css/module.css}">
+			<link rel="stylesheet" th:href="@{/css/layout.css}">			
 		</th:block>	
 	</head>
 	
 	<body>	
-		<header></header>
+		
 		<div layout:fragment="content" id="contaniner" class=""><!-- 벽돌 배경이미지 사용 시 class="bg-bricks" 적용 / 배경이미지가 없을 경우 class 삭제  -->
         
 
@@ -34,15 +38,9 @@
         <ul class="evt-tab-menu">
             <!-- 활성화 시 a 태그에 on 클래스를 넣어주세요. -->
             <li><a href="/culture-event/event/defaultNew.aspx?mCode=001" title="" class="on">SPECIAL</a></li>
-            <li><a href="/culture-event/event/defaultNew.aspx?mCode=004" title="" class="">영화/예매</a></li>
-            <li><a href="/culture-event/event/defaultNew.aspx?mCode=008" title="" class="">멤버십/CLUB</a></li>
-            <li><a href="/culture-event/event/defaultNew.aspx?mCode=005" title="" class="">CGV 극장별</a></li>
-            <li><a href="/culture-event/event/defaultNew.aspx?mCode=006" title="" class="">제휴/할인</a></li>        
+                   
         </ul>    
-        <div class="submenu">
-            <a href="/user/mycgv/event/result_list.aspx" class="round red on"><i>당첨자 발표</i></a>
-            <a href="/culture-event/event/end-list.aspx" class="round red on"><i>종료된 이벤트</i></a>
-        </div>
+        
     </div>
     
     
@@ -55,48 +53,229 @@
     <div class="cols-content">
         <div class="col-detail event">
             
-            <ul class="sect-evt-item-list">
-               
-                    
-                    
+         <ul class="sect-evt-item-list">  
+            <li>
+            	<a id="tile_0" href="http://www.cgv.co.kr/event/Goods/Default.aspx">
+	            <div class="evt-thumb">
+		            <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34022/16450753700990.jpg" alt="개봉작 사용설명서">
+		        </div>
+		        <div class="evt-desc">
+		            <p class="txt1">개봉작 사용설명서</p>
+		            <p class="txt2">2022.08.18~2022.09.11</p>
+	            </div>
+	            </a>
+            </li>
+            
+            <li>
+            	<a id="tile_1" href="./detailViewUnited.aspx?seq=35139&amp;menu=001">
+            		<div class="evt-thumb">
+            			<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35139/16608006471450.jpg" alt="[불릿 트레인]SX 리미티드 포스터">
+    				</div>
+    				<div class="evt-desc">
+    					<p class="txt1">[불릿 트레인] SX 리미티드 포스터</p>
+    					<p class="txt2">2022.08.18~2022.09.11</p>
+    				</div>
+    			</a>
+    		</li>
     
-            <li><a id="tile_0" href="http://www.cgv.co.kr/event/Goods/Default.aspx"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/34022/16450753700990.jpg" alt="개봉작 사용설명서"></div><div class="evt-desc"><p class="txt1">개봉작 사용설명서</p><p class="txt2"></p></div></a></li><li><a id="tile_1" href="./detailViewUnited.aspx?seq=35139&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35139/16608006471450.jpg" alt="[불릿 트레인] 
-    SX 리미티드 포스터"></div><div class="evt-desc"><p class="txt1">[불릿 트레인] 
-    SX 리미티드 포스터</p><p class="txt2">2022.08.18~2022.09.11</p></div></a></li><li><a id="tile_2" href="./detailViewUnited.aspx?seq=35138&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35138/16608010500440.jpg" alt="[불릿트레인] 
-    4DX 리미티드 포스터"></div><div class="evt-desc"><p class="txt1">[불릿트레인] 
-    4DX 리미티드 포스터</p><p class="txt2">2022.08.18~2022.09.11</p></div></a></li><li><a id="tile_3" href="./detailViewUnited.aspx?seq=35132&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35132/16607155436620.jpg" alt="[불릿 트레인]
-    필름마크"></div><div class="evt-desc"><p class="txt1">[불릿 트레인]
-    필름마크</p><p class="txt2">2022.08.17~2022.09.11</p></div></a></li><li><a id="tile_4" href="./detailViewUnited.aspx?seq=35077&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35077/16599490704330.jpg" alt="라스트 특가"></div><div class="evt-desc"><p class="txt1">라스트 특가</p><p class="txt2">2022.08.08~2022.08.23<span> . </span><em>D-4</em></p></div></a></li><li><a id="tile_5" href="./detailViewUnited.aspx?seq=35145&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35145/16608016480270.jpg" alt="[귀멸의 칼날: 아사쿠사 편]
-    필름마크"></div><div class="evt-desc"><p class="txt1">[귀멸의 칼날: 아사쿠사 편]
-    필름마크</p><p class="txt2">2022.08.18~2022.09.11</p></div></a></li><li><a id="tile_6" href="./detailViewUnited.aspx?seq=35122&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35122/16602931839250.jpg" alt="[탑건: 매버릭]
-    4DX 특별 포스터"></div><div class="evt-desc"><p class="txt1">[탑건: 매버릭]
-    4DX 특별 포스터</p><p class="txt2">2022.08.12~2022.08.23<span> . </span><em>D-4</em></p></div></a></li><li><a id="tile_7" href="./detailViewUnited.aspx?seq=35042&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35042/16595025391090.jpg" alt="[헌트]
-    필름마크"></div><div class="evt-desc"><p class="txt1">[헌트]
-    필름마크</p><p class="txt2">2022.08.03~2022.08.28</p></div></a></li><li><a id="tile_8" href="./detailViewUnited.aspx?seq=35035&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35035/16594172975450.jpg" alt="[비상선언] 4DX
-    리미티드 포스터"></div><div class="evt-desc"><p class="txt1">[비상선언] 4DX
-    리미티드 포스터</p><p class="txt2">2022.08.02~2022.08.26<span> . </span><em>D-7</em></p></div></a></li><li><a id="tile_9" href="./detailViewUnited.aspx?seq=35136&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35136/16607379676500.jpg" alt="[씨네샵X카카오쇼핑라이브]
-    해리포터 신상품 최초공개!"></div><div class="evt-desc"><p class="txt1">[씨네샵X카카오쇼핑라이브]
-    해리포터 신상품 최초공개!</p><p class="txt2">2022.08.18~2022.08.24<span> . </span><em>D-5</em></p></div></a></li><li><a id="tile_10" href="./detailViewUnited.aspx?seq=35137&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35137/16607838097190.jpg" alt="[불릿 트레인]
-    IMAX 포스터 증정"></div><div class="evt-desc"><p class="txt1">[불릿 트레인]
-    IMAX 포스터 증정</p><p class="txt2">2022.08.18~2022.08.31</p></div></a></li><li><a id="tile_11" href="./detailViewUnited.aspx?seq=35101&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35101/16602086572290.jpg" alt="[씨네뮤지엄] 
-    세계 미술사 여행"></div><div class="evt-desc"><p class="txt1">[씨네뮤지엄] 
-    세계 미술사 여행</p><p class="txt2">2022.08.12~2022.11.27</p></div></a></li><li><a id="tile_12" href="./detailViewUnited.aspx?seq=35096&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35096/16601066219630.png" alt="속도UP! 가격DOWN!
-    패오 속전속결세트 런칭!"></div><div class="evt-desc"><p class="txt1">속도UP! 가격DOWN!
-    패오 속전속결세트 런칭!</p><p class="txt2">2022.08.10~2022.08.24<span> . </span><em>D-5</em></p></div></a></li><li><a id="tile_13" href="./detailViewUnited.aspx?seq=35093&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35093/16600861518630.jpg" alt="[놉]
-    IMAX 포스터 증정"></div><div class="evt-desc"><p class="txt1">[놉]
-    IMAX 포스터 증정</p><p class="txt2">2022.08.10~2022.08.23<span> . </span><em>D-4</em></p></div></a></li><li><a id="tile_14" href="./detailViewUnited.aspx?seq=35085&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35085/16600077053140.jpg" alt="[시네마캐슬] 
-    8월 상영작 &amp; 이벤트 안내"></div><div class="evt-desc"><p class="txt1">[시네마캐슬] 
-    8월 상영작 &amp; 이벤트 안내</p><p class="txt2">2022.08.10~2022.08.31</p></div></a></li><li><a id="tile_15" href="./detailViewUnited.aspx?seq=35009&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35009/16600368376190.jpg" alt="CGV x 트라이비 제휴 이벤트"></div><div class="evt-desc"><p class="txt1">CGV x 트라이비 제휴 이벤트</p><p class="txt2">2022.08.10~2022.10.18</p></div></a></li><li><a id="tile_16" href="./detailViewUnited.aspx?seq=35091&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35091/16600361004330.jpg" alt="<DC 리그 오브 슈퍼-펫>
-    고객 선착순 스몰세트 1천원"></div><div class="evt-desc"><p class="txt1">&lt;DC 리그 오브 슈퍼-펫&gt;
-    고객 선착순 스몰세트 1천원</p><p class="txt2">2022.08.09~2022.08.23<span> . </span><em>D-4</em></p></div></a></li><li><a id="tile_17" href="./detailViewUnited.aspx?seq=35034&amp;menu=001"><div class="evt-thumb"><img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35034/16594170052290.jpg" alt="[비상선언] SX 
-    리미티드 포스터"></div><div class="evt-desc"><p class="txt1">[비상선언] SX 
-    리미티드 포스터</p><p class="txt2">2022.08.02~2022.08.23<span> . </span><em>D-4</em></p></div></a></li></ul>
+		    <li>
+			    <a id="tile_2" href="./detailViewUnited.aspx?seq=35138&amp;menu=001">
+				    <div class="evt-thumb">
+				    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35138/16608010500440.jpg" alt="[불릿트레인]4DX 리미티드 포스터">
+				    </div>
+				    <div class="evt-desc">
+					    <p class="txt1">[불릿트레인]4DX 리미티드 포스터</p>
+					    <p class="txt2">2022.08.18~2022.09.11</p>
+				    </div>
+			    </a>
+		    </li>
+		    
+		    <li>
+			    <a id="tile_3" href="./detailViewUnited.aspx?seq=35132&amp;menu=001">
+				    <div class="evt-thumb">
+				    	 <img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35132/16607155436620.jpg" alt="[불릿 트레인] 필름마크">
+				    </div>
+				    <div class="evt-desc">
+					    <p class="txt1">[불릿 트레인] 필름마크</p>
+					    <p class="txt2">2022.08.17~2022.09.11</p>
+				    </div>
+			    </a>
+		    </li>
+    
+    <li>
+	    <a id="tile_4" href="./detailViewUnited.aspx?seq=35077&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35077/16599490704330.jpg" alt="라스트 특가">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">라스트 특가</p>
+			    <p class="txt2">2022.08.08~2022.08.23<span> . </span>
+		    		<em>D-4</em>
+		    	</p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_5" href="./detailViewUnited.aspx?seq=35145&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35145/16608016480270.jpg" alt="[귀멸의 칼날: 아사쿠사 편] 필름마크">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[귀멸의 칼날: 아사쿠사 편]필름마크</p>
+			    <p class="txt2">2022.08.18~2022.09.11</p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_6" href="./detailViewUnited.aspx?seq=35122&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35122/16602931839250.jpg" alt="[탑건: 매버릭]4DX 특별 포스터">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[탑건: 매버릭]4DX 특별 포스터</p>
+			    <p class="txt2">2022.08.12~2022.08.23<span> . </span>
+			    	<em>D-4</em>
+			    </p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_7" href="./detailViewUnited.aspx?seq=35042&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35042/16595025391090.jpg" alt="[헌트]필름마크">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[헌트] 필름마크</p>
+			    <p class="txt2">2022.08.03~2022.08.28</p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_8" href="./detailViewUnited.aspx?seq=35035&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35035/16594172975450.jpg" alt="[비상선언] 4DX리미티드 포스터">
+		    </div>
+		    <div class="evt-desc"><p class="txt1">[비상선언] 4DX리미티드 포스터</p>
+		    	<p class="txt2">2022.08.02~2022.08.26<span> . </span><em>D-7</em></p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_9" href="./detailViewUnited.aspx?seq=35136&amp;menu=001">
+		    <div class="evt-thumb">
+		   		<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35136/16607379676500.jpg" alt="[씨네샵X카카오쇼핑라이브] 해리포터 신상품 최초공개!">
+		    </div>
+		    <div class="evt-desc"><p class="txt1">[씨네샵X카카오쇼핑라이브]해리포터 신상품 최초공개!</p>
+		    	<p class="txt2">2022.08.18~2022.08.24<span> . </span><em>D-5</em></p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_10" href="./detailViewUnited.aspx?seq=35137&amp;menu=001">
+		    <div class="evt-thumb">
+		   		<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35137/16607838097190.jpg" alt="[불릿 트레인]IMAX 포스터 증정">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[불릿 트레인]IMAX 포스터 증정</p>
+			    <p class="txt2">2022.08.18~2022.08.31</p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_11" href="./detailViewUnited.aspx?seq=35101&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35101/16602086572290.jpg" alt="[씨네뮤지엄]세계 미술사 여행">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[씨네뮤지엄]세계 미술사 여행</p>
+			    <p class="txt2">2022.08.12~2022.11.27</p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_12" href="./detailViewUnited.aspx?seq=35096&amp;menu=001">
+		    <div class="evt-thumb">
+		   		<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35096/16601066219630.png" alt="속도UP! 가격DOWN! 패오 속전속결세트 런칭!">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">속도UP! 가격DOWN! 패오 속전속결세트 런칭!</p>
+			    <p class="txt2">2022.08.10~2022.08.24<span> . </span><em>D-5</em></p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_13" href="./detailViewUnited.aspx?seq=35093&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35093/16600861518630.jpg" alt="[놉]IMAX 포스터 증정">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[놉]IMAX 포스터 증정</p>
+			    <p class="txt2">2022.08.10~2022.08.23<span> . </span><em>D-4</em></p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_14" href="./detailViewUnited.aspx?seq=35085&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35085/16600077053140.jpg" alt="[시네마캐슬] 8월 상영작 &amp; 이벤트 안내">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[시네마캐슬]8월 상영작 &amp; 이벤트 안내</p>
+			    <p class="txt2">2022.08.10~2022.08.31</p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_15" href="./detailViewUnited.aspx?seq=35009&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35009/16600368376190.jpg" alt="CGV x 트라이비 제휴 이벤트">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">CGV x 트라이비 제휴 이벤트</p>
+			    <p class="txt2">2022.08.10~2022.10.18</p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_16" href="./detailViewUnited.aspx?seq=35091&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35091/16600361004330.jpg" alt="<DC 리그 오브 슈퍼-펫>고객 선착순 스몰세트 1천원">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">&lt;DC 리그 오브 슈퍼-펫&gt;고객 선착순 스몰세트 1천원</p>
+			    <p class="txt2">2022.08.09~2022.08.23<span> . </span><em>D-4</em></p>
+		    </div>
+	    </a>
+    </li>
+    
+    <li>
+	    <a id="tile_17" href="./detailViewUnited.aspx?seq=35034&amp;menu=001">
+		    <div class="evt-thumb">
+		    	<img src="https://img.cgv.co.kr/WebApp/contents/eventV4/35034/16594170052290.jpg" alt="[비상선언] SX 리미티드 포스터">
+		    </div>
+		    <div class="evt-desc">
+			    <p class="txt1">[비상선언] SX 리미티드 포스터</p>
+			    <p class="txt2">2022.08.02~2022.08.23<span> . </span><em>D-4</em></p>
+		    </div>
+	    </a>
+    </li>
+    
+    
+    </ul>
             
-            
-            
-            <button type="button" class="btn-item-more" id="btnMoreData">
-                <strong>더보기</strong>		   
-            </button>
+
     
         </div>
         

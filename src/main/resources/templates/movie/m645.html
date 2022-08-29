@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		
+
+	  	<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+			<link rel="stylesheet" th:href="@{/css/module.css}">
+			<link rel="stylesheet" th:href="@{/css/layout.css}">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+		</th:block>	
+	</head>
+	
+	<body>
+
+<div layout:fragment="content" id="contaniner" class="">
+        
+
+<!-- Contents Area -->
+<div id="contents" class="">        
+            
+<!-- Contents Start -->			
+
+<!-- 실컨텐츠 시작 -->
+<div class="wrap-movie-detail" id="select_main">
+
+
+<div class="sect-base-movie">
+    <h3><strong>육사오</strong>기본정보</h3>
+    <div class="box-image">
+        <a href="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86059/86059_1000.jpg" title="포스터 크게 보기 새창" target="_blank">
+            <span class="thumb-image"> 
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86059/86059_320.jpg" alt="육사오 포스터 새창" onerror="errorImage(this)"/>
+                <span class="ico-posterdetail">포스터 크게 보기</span>
+                <span class="ico-grade grade-12"> 12세 이상</span>
+            </span> 
+        </a> 
+    </div>
+    <div class="box-contents">
+        <div class="title"> 
+            <strong>육사오</strong>
+            <em class="round lightblue"><span>현재상영중</span></em>
+            
+            
+            <p>-</p>
+        </div>
+        <div class="score"> 
+            <strong class="percent">예매율&nbsp;<span>14.1%</span></strong>
+            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 -->            
+            <div class='egg-gage small'>
+                                            <span class='egg great'></span>
+                                            <span class='percent'>95%</span>
+                                        </div>
+        </div>
+        <!-- 떨어지는 얘 이전 요소에 class=on을 넣는다 -->
+        <div class="spec">
+            <dl>
+                <dt>감독 :&nbsp;</dt>
+                <dd>
+                    
+                        
+                        <a href="/movies/persons/?pidx=5949">박규태</a>                    
+                        
+                </dd>
+                
+                <dd>
+                    
+                </dd>
+
+                <dt>&nbsp;/ 배우 :&nbsp;</dt>
+                <dd class="on">
+                    
+                        
+                        <a href="/movies/persons/?pidx=114261">고경표</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=113965">이이경</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=121895">음문석</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=118800">박세완</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=117489">곽동연</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=122083">이순원</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=30652">김민호</a>                    
+                        
+                </dd>
+
+                <dt>장르 :&nbsp;코미디</dt> 
+                <dd></dd>
+                <dt>&nbsp;/ 기본 :&nbsp;</dt>
+                <dd class="on">12세 이상,&nbsp;113분,&nbsp;한국</dd>
+                <dt>개봉 :&nbsp;</dt>
+                <dd class="on">2022.08.24</dd>
+
+
+            
+
+            </dl>
+        </div>
+        <span class="screentype">
+        
+        </span>
+
+        <span class="like">
+            <!-- 2020.05.07 영화찜하기 -> 프리에그 선택 변경(조회하여 노출) -->
+            <a class="link-count" href="javascript:void (0);"><i class="sprite_preegg btn_md default"></i>프리에그</a>
+        
+            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030431&MOVIE_CD_GROUP=20030112">예매</a> 
+        
+        </span>
+
+    </div>
+</div>
+<!-- .sect-base -->
+
+
+
+<script type="text/javascript">
+    _TRK_PNC = "82120";
+    _TRK_PNC_NM = "탑건-매버릭";
+    _TRK_PNG = "영화";
+    _TRK_PI = "PDV";
+    _TRK_CP = "/영화/영화상세/{0}/탑건-매버릭";
+</script>
+
+
+    <div class="cols-content" id="menu">
+        <div class="col-detail">
+            <!-- 메뉴가 선택되면 a 에 title="선택" 이라고 넣는다 -->
+            <ul class="tab-menu">
+                <li class="on"><a title="현재 선택됨" href="/movies/detail-view/?midx=86059#menu">주요정보 </a></li>             
+                <li><a href="/movies/detail-view/trailer.aspx?midx=86059#menu">트레일러</a></li>
+                <li><a href="/movies/detail-view/still-cut.aspx?midx=86059#menu">스틸컷</a></li>
+                <li><a href="/movies/detail-view/?midx=86059#commentReg">평점/리뷰</a></li>               
+                <li class="last"><a href="/movies/detail-view/show-times.aspx?midx=86059#menu">상영시간표</a></li>
+            </ul>
+            <div class="sect-story-movie">
+                바람을 타고 군사분계선을 넘어가버린 57억 1등 당첨 로또를 둘러싼 남북 군인들간의 코믹 접선극
+            </div>
+            <!-- .sect-story -->
+            <!-- 2020.05.07 성별예매분포, 연령별예매분포 UI 변경 -->
+            <div id="ctl00_PlaceHolderContent_Section_Chart" class="sect-graph sect-graph-emotion">
+                <ul class="graph">
+                    <li>
+                        <strong>성별 예매 분포</strong>
+                        <div id="jqplot_sex" class="chart"></div>
+                    </li>
+                    <li>
+                        <strong>연령별 예매 분포</strong>
+                        <div id="jqplot_age" class="chart"></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- .sect-graph -->
+
+            <div class="movie-detail-ad">
+                <iframe src="http://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/sub@SponsorBar_800" width="800" height="90" title="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" name="SponsorBar_800" id="SponsorBar_800"></iframe>
+            </div>
+            <!-- .sect-staff -->
+            <div id="ctl00_PlaceHolderContent_Section_Trailer" class="sect-trailer">
+                <div class="heading">
+                    <h4>트레일러</h4><span id="ctl00_PlaceHolderContent_TrailerTotalCount" class="count">5건</span><a class="link-more" href="trailer.aspx?midx=86059">더보기</a>
+                </div>
+                <ul>
+                <!-- 사진 동영상 조회 -->
+                
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205777">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86059/86059205777_1024.jpg" alt="[육사오]리뷰 예고편" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205777">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    리뷰 예고편
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.19</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205547">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86059/86059205547_1024.jpg" alt="[육사오]제작기 영상" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205547">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    제작기 영상
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.10</span>
+                        </div>
+                    </li>
+                    
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205415">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86059/86059205415_1024.jpg" alt="[육사오]캐릭터 예고편" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205415">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    캐릭터 예고편
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.08.04</span>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div><!-- .sect-trailer -->
+            <div id="ctl00_PlaceHolderContent_Section_Still_Cut" class="sect-stillcut">
+                <div class="heading">
+                    <h4>스틸컷</h4><span class="count"><strong id="stillcut_current">1</strong>/5건</span><a class="link-more" href="still-cut.aspx?midx=86059">더보기</a>
+                </div>
+                <div class="slider-wrap">
+                    <div class="slider" id="still_motion">
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86059/86059205848_727.JPG" alt="육사오" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86059/86059205847_727.JPG" alt="육사오" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86059/86059205846_727.jpg" alt="육사오" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86059/86059205845_727.JPG" alt="육사오" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86059/86059205844_727.JPG" alt="육사오" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+              
+                        <button type="button" class="btn-prev">이전 페이지 이동</button>
+                        <button type="button" class="btn-next">다음 페이지 이동</button>
+                    </div>
+                </div>
+            </div>
+</div>
+    <span style="display:none" class="modifyCommentDummy"></span>
+</div>
+         
+<!--/ Contents End -->
+</div>
+		 
+	<footer></footer>		
+</body>
+</html>	

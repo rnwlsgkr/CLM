@@ -10,17 +10,17 @@
 			<link rel="stylesheet" th:href="@{/css/main.css}">
 			<link rel="stylesheet" th:href="@{/css/movie.css}">
 			<link rel="stylesheet" th:href="@{/css/rest.css}">
+			<link rel="stylesheet" th:href="@{/css/module.css}">
+			<link rel="stylesheet" th:href="@{/css/layout.css}">			
 		</th:block>
 	</head>
 	<body>
-	<div layout:fragment="content" id="contaniner" class=""><!-- 벽돌 배경이미지 사용 시 class="bg-bricks" 적용 / 배경이미지가 없을 경우 class 삭제  -->
-        
-
+	<div layout:fragment="content" id="contaniner" class=""> 
 		<!-- Contents Area -->
-		 <div id="contents" class="">
+	<div id="contents" class="">
         
             
-            <!-- Contents Start -->
+<!-- Contents Start -->
 			
 
 
@@ -30,435 +30,807 @@
         <div class="tit-heading-wrap">
             <h3>무비차트</h3>
            
-            <div class="submenu">
-                <ul>
-                    <li class="on"><a href="/movies/" title="선택">무비차트</a></li>
-                    <li><a href="/movies/pre-movies.aspx">상영예정작</a></li>
-                    <!--<li><a href="/movies/?lt=3">CGV아트하우스</a></li>//-->
-                </ul>
-            </div>
         </div>
         <!-- //Heading Map Multi -->
-        <!-- Sorting -->
-        <div class="sect-sorting">
-             <div class="nowshow">
-                        <input type="checkbox" id="chk_nowshow">
-            
-                <label for="chk_nowshow">현재 상영작만 보기</label>                
-            </div>
-            <label for="order_type" class="hidden">정렬</label>
-            <select id="order_type" name="order-type">
-				<option title="현재 선택됨" selected="" value="1">예매율순</option>
-                <option value="2">평점순</option>
-                <option value="3">관람객순</option>
-            </select>
-            <button type="button" class="round gray"><span>GO</span></button>
-        </div>
-        <!-- //Sorting -->
         
         <div class="sect-movie-chart">
-            <h4 class="hidden">
-                무비차트 - 예매율순
-            </h4>
-            <ol>
-            
-                <li>
-                    <div class="box-image">
-                        <strong class="rank">No.1</strong>	
-                        <a href="/movies/detail-view/?midx=82120">
-                            <span class="thumb-image">
-                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000082/82120/82120_320.jpg" alt="탑건-매버릭 포스터" onerror="errorImage(this)">
-                                <span class="ico-grade grade-12">12세 이상</span>
-                            </span>
-                            
-                        </a>
-                        <span class="screentype">
-                            
-                                <a class="forDX" href="#" title="4DX 상세정보 바로가기" data-regioncode="4D14">4DX</a>
-                            
-                                <a class="screenx" href="#" title="SCREENX 상세정보 바로가기" data-regioncode="SCX">SCREENX</a>
-                            
-                        </span>
-                    </div>
+    <h4 class="hidden">
+        무비차트 - 예매율순
+    </h4>
+    <ol style="display:flex; justify-content:center;">
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.1</strong>	
+                <a href="/movies/detail-view/?midx=82120">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000082/82120/82120_320.jpg" alt="탑건-매버릭 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
                     
-                    <div class="box-contents">
-                        <a href="/movies/detail-view/?midx=82120">
-                            <strong class="title">탑건-매버릭</strong>
-                        </a>
-
-                        <div class="score">
-                            <strong class="percent">예매율<span>21.1%</span></strong>
-                            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위1~ 3위)-->
-                            <div class="egg-gage small">
-                                            <span class="egg great"></span>
-                                            <span class="percent">99%</span>
-                                        </div>
-                        </div>
-
-                        <span class="txt-info">
-                            <strong>
-                                2022.06.22 
-                                <span>개봉</span>
-                                
-                            </strong>
-                        </span>
-                        <span class="like"> 
-                            <a class="link-reservation" href="/ticket/?MOVIE_CD=20029859&amp;MOVIE_CD_GROUP=20020357">예매</a>
-                        </span>
-                    </div>    
-                </li>
-            
-                <li>
-                    <div class="box-image">
-                        <strong class="rank">No.2</strong>	
-                        <a href="/movies/detail-view/?midx=86058">
-                            <span class="thumb-image">
-                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86058/86058_320.jpg" alt="헌트 포스터" onerror="errorImage(this)">
-                                <span class="ico-grade grade-15">15세 이상</span>
-                            </span>
-                            
-                        </a>
-                        <span class="screentype">
-                            
-                        </span>
-                    </div>
+                </a>
+                <span class="screentype">
                     
-                    <div class="box-contents">
-                        <a href="/movies/detail-view/?midx=86058">
-                            <strong class="title">헌트</strong>
-                        </a>
-
-                        <div class="score">
-                            <strong class="percent">예매율<span>19.4%</span></strong>
-                            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위1~ 3위)-->
-                            <div class="egg-gage small">
-                                            <span class="egg great"></span>
-                                            <span class="percent">95%</span>
-                                        </div>
-                        </div>
-
-                        <span class="txt-info">
-                            <strong>
-                                2022.08.10 
-                                <span>개봉</span>
-                                
-                            </strong>
-                        </span>
-                        <span class="like"> 
-                            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030111&amp;MOVIE_CD_GROUP=20030111">예매</a>
-                        </span>
-                    </div>    
-                </li>
-            
-                <li>
-                    <div class="box-image">
-                        <strong class="rank">No.3</strong>	
-                        <a href="/movies/detail-view/?midx=85722">
-                            <span class="thumb-image">
-                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85722/85722_320.jpg" alt="놉 포스터" onerror="errorImage(this)">
-                                <span class="ico-grade grade-12">12세 이상</span>
-                            </span>
-                            
-                        </a>
-                        <span class="screentype">
-                            
-                                <a class="imax" href="#" title="IMAX 상세정보 바로가기" data-regioncode="07">IMAX</a>
-                            
-                                <a class="forDX" href="#" title="4DX 상세정보 바로가기" data-regioncode="4D14">4DX</a>
-                            
-                        </span>
-                    </div>
+                        <a class="imax" href="#" title="IMAX 상세정보 바로가기" data-regioncode="07">IMAX</a>
                     
-                    <div class="box-contents">
-                        <a href="/movies/detail-view/?midx=85722">
-                            <strong class="title">놉</strong>
-                        </a>
-
-                        <div class="score">
-                            <strong class="percent">예매율<span>17.7%</span></strong>
-                            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위1~ 3위)-->
-                            <div class="egg-gage small">
-                                            <span class="egg good"></span>
-                                            <span class="percent">83%</span>
-                                        </div>
-                        </div>
-
-                        <span class="txt-info">
-                            <strong>
-                                2022.08.17 
-                                <span>개봉</span>
-                                
-                            </strong>
-                        </span>
-                        <span class="like"> 
-                            <a class="link-reservation" href="/ticket/?MOVIE_CD=20029139&amp;MOVIE_CD_GROUP=20029139">예매</a>
-                        </span>
-                    </div>    
-                </li>
-            
-            </ol>
-
-            <ol>
-            
-                <li>
-                    <div class="box-image">
-                        <strong class="rank">No.4</strong>	
-                        <a href="/movies/detail-view/?midx=83280">
-                            <span class="thumb-image">
-                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83280/83280_320.jpg" alt="한산-용의 출현 포스터" onerror="errorImage(this)">
-                                <span class="ico-grade grade-12">12세 이상</span>
-                            </span>
-                        </a>
-                        <span class="screentype">
-                            
-                        </span>
-                    </div>
-                    <div class="box-contents">
-                        <a href="/movies/detail-view/?midx=83280">
-                            <strong class="title">한산-용의 출현</strong>
-                        </a>
-
-                        <div class="score">
-                            <strong class="percent">예매율<span>9.0%</span></strong>
-                            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위4~ 7위)-->
-                            <div class="egg-gage small">
-                                            <span class="egg great"></span>
-                                            <span class="percent">96%</span>
-                                        </div>
-                        </div>
-
-                        <span class="txt-info">
-                            <strong>
-                                2022.07.27 
-                                <span>개봉</span>
-                                
-                            </strong>
-                        </span>
-                        <span class="like"> 
-                            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030310&amp;MOVIE_CD_GROUP=20023452">예매</a>
-                        </span>
-                    </div>    
-                </li>
-            
-                <li>
-                    <div class="box-image">
-                        <strong class="rank">No.5</strong>	
-                        <a href="/movies/detail-view/?midx=86081">
-                            <span class="thumb-image">
-                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86081/86081_320.jpg" alt="시맨틱 에러-더 무비 포스터" onerror="errorImage(this)">
-                                <span class="ico-grade grade-12">12세 이상</span>
-                            </span>
-                        </a>
-                        <span class="screentype">
-                            
-                        </span>
-                    </div>
-                    <div class="box-contents">
-                        <a href="/movies/detail-view/?midx=86081">
-                            <strong class="title">시맨틱 에러-더 무비</strong>
-                        </a>
-
-                        <div class="score">
-                            <strong class="percent">예매율<span>8.2%</span></strong>
-                            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위4~ 7위)-->
-                            <div class="egg-gage small">
-                                            <span class="sprite_preegg default"></span>
-                                            <span class="percent">99%</span>
-                                        </div>
-                        </div>
-
-                        <span class="txt-info">
-                            <strong>
-                                2022.08.31 
-                                <span>개봉</span>
-                                <em class="dday">D-12</em>
-                            </strong>
-                        </span>
-                        <span class="like"> 
-                            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030186&amp;MOVIE_CD_GROUP=20030186">예매</a>
-                        </span>
-                    </div>    
-                </li>
-            
-                <li>
-                    <div class="box-image">
-                        <strong class="rank">No.6</strong>	
-                        <a href="/movies/detail-view/?midx=86059">
-                            <span class="thumb-image">
-                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86059/86059_320.jpg" alt="육사오 포스터" onerror="errorImage(this)">
-                                <span class="ico-grade grade-12">12세 이상</span>
-                            </span>
-                        </a>
-                        <span class="screentype">
-                            
-                        </span>
-                    </div>
-                    <div class="box-contents">
-                        <a href="/movies/detail-view/?midx=86059">
-                            <strong class="title">육사오</strong>
-                        </a>
-
-                        <div class="score">
-                            <strong class="percent">예매율<span>5.4%</span></strong>
-                            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위4~ 7위)-->
-                            <div class="egg-gage small">
-                                            <span class="sprite_preegg default"></span>
-                                            <span class="percent">99%</span>
-                                        </div>
-                        </div>
-
-                        <span class="txt-info">
-                            <strong>
-                                2022.08.24 
-                                <span>개봉</span>
-                                <em class="dday">D-5</em>
-                            </strong>
-                        </span>
-                        <span class="like"> 
-                            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030340&amp;MOVIE_CD_GROUP=20030112">예매</a>
-                        </span>
-                    </div>    
-                </li>
-            
-                <li>
-                    <div class="box-image">
-                        <strong class="rank">No.7</strong>	
-                        <a href="/movies/detail-view/?midx=86071">
-                            <span class="thumb-image">
-                                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86071/86071_320.jpg" alt="불릿 트레인 포스터" onerror="errorImage(this)">
-                                <span class="ico-grade grade-19">청소년 관람불가</span>
-                            </span>
-                        </a>
-                        <span class="screentype">
-                            
-                                <a class="imax" href="#" data-regioncode="07">IMAX</a>
-                            
-                                <a class="forDX" href="#" data-regioncode="4D14">4DX</a>
-                            
-                                <a class="screenx" href="#" data-regioncode="SCX">SCREENX</a>
-                            
-                        </span>
-                    </div>
-                    <div class="box-contents">
-                        <a href="/movies/detail-view/?midx=86071">
-                            <strong class="title">불릿 트레인</strong>
-                        </a>
-
-                        <div class="score">
-                            <strong class="percent">예매율<span>4.8%</span></strong>
-                            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위4~ 7위)-->
-                            <div class="egg-gage small">
-                                 <span class="sprite_preegg default"></span>
-                                 <span class="percent">99%</span>
-                            </div>
-                        </div>
-
-                        <span class="txt-info">
-                            <strong>
-                                2022.08.24 
-                                <span>개봉</span>
-                                <em class="dday">D-5</em>
-                            </strong>
-                        </span>
-                        <span class="like"> 
-                            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030350&amp;MOVIE_CD_GROUP=20030154">예매</a>
-                        </span>
-                    </div>    
-                </li>
-            
-            </ol>
-
-            <div class="chart-ad-bottom" id="chart-ad-bottom">
-                <iframe src="http://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/sub@SponsorBar_980" width="980" height="90" title="광고-육사오" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" name="SponsorBar_980" id="SponsorBar_980"></iframe>
+                        <a class="forDX" href="#" title="4DX 상세정보 바로가기" data-regioncode="4D14">4DX</a>
+                    
+                        <a class="screenx" href="#" title="SCREENX 상세정보 바로가기" data-regioncode="SCX">SCREENX</a>
+                    
+                </span>
             </div>
             
-             
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=82120">
+                    <strong class="title">탑건-매버릭</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>17.8%</span></strong>
+                    <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위1~ 3위)-->
+                    <div class="egg-gage small">
+                                    <span class="egg great"></span>
+                                    <span class="percent">99%</span>
+                                </div>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.06.22 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20029859&amp;MOVIE_CD_GROUP=20020357">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.2</strong>	
+                <a href="/movies/detail-view/?midx=86071">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86071/86071_320.jpg" alt="불릿 트레인 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-19">청소년 관람불가</span>
+                    </span>
+                    
+                </a>
+                <span class="screentype">
+                    
+                        <a class="imax" href="#" title="IMAX 상세정보 바로가기" data-regioncode="07">IMAX</a>
+                    
+                        <a class="forDX" href="#" title="4DX 상세정보 바로가기" data-regioncode="4D14">4DX</a>
+                    
+                        <a class="screenx" href="#" title="SCREENX 상세정보 바로가기" data-regioncode="SCX">SCREENX</a>
+                    
+                </span>
+            </div>
             
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86071">
+                    <strong class="title">불릿 트레인</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>14.8%</span></strong>
+                    <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위1~ 3위)-->
+                    <div class="egg-gage small">
+                                    <span class="egg good"></span>
+                                    <span class="percent">71%</span>
+                                </div>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.24 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030350&amp;MOVIE_CD_GROUP=20030154">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.3</strong>	
+                <a href="/movies/detail-view/?midx=86059">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86059/86059_320.jpg" alt="육사오 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
+                    
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
             
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86059">
+                    <strong class="title">육사오</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>14.1%</span></strong>
+                    <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 (적용 범위1~ 3위)-->
+                    <div class="egg-gage small">
+                                    <span class="egg great"></span>
+                                    <span class="percent">95%</span>
+                                </div>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.24 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030431&amp;MOVIE_CD_GROUP=20030112">예매</a>
+                </span>
+            </div>    
+        </li>
+        
+        <li>
+            <div class="box-image">
+                <strong class="rank">금주 예매율 1위</strong>	
+                <a href="/movies/detail-view/?midx=82120">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000082/82120/82120_320.jpg" alt="탑건-매버릭 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
+                    
+                </a>
+                <span class="screentype">
+                    
+                        <a class="imax" href="#" title="IMAX 상세정보 바로가기" data-regioncode="07">IMAX</a>
+                    
+                        <a class="forDX" href="#" title="4DX 상세정보 바로가기" data-regioncode="4D14">4DX</a>
+                    
+                        <a class="screenx" href="#" title="SCREENX 상세정보 바로가기" data-regioncode="SCX">SCREENX</a>
+                    
+                </span>
+            </div>
             
-            
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=82120">
+                    <strong class="title">탑건-매버릭</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>17.8%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.06.22 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20029859&amp;MOVIE_CD_GROUP=20020357">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+    </ol>
 
 
-            
-        </div>
-    </div><!-- .sect-moviechart -->
-<script type="text/javascript">
-//<![CDATA[
-    (function ($) {
-        $(function () {
-
-            $('.sect-sorting button').click(function () {
-                var val = $('#order_type').val();
-                if (val) {
-                    location.href = "/movies/?lt=1&ot=" + val;
-                }
-            });
-            //[2015-12-15] 무비 파인더 페이지 인 경우 정렬 버튼 처리. : add_mwpark
-            $("#sect-finder button").click(function(){
-                var val = $('#order_type').val();
-                if (val) {
-                    location.href = "/movies/finder.aspx?lt=1&ot=" + val;
-                }
-            });
 
 
-            $('#chk_nowshow').click(function () {
-                if ($("input:checkbox[id='chk_nowshow']").is(":checked")) {
-                    location.href = "/movies/?lt=1&ft=1";
-                }
-                else{
-                    location.href = "/movies/?lt=1&ft=0";
-                }
-            });
-
-            //[2015-12-15] 무비 파인더 페이지 인 경우 현재 상영작만 보기 체크 박스 처리. : add_mwpark
-            $("#chk_finder_nowshow").on("click" , function(){
-                if ($("input:checkbox[id='chk_nowshow']").is(":checked")) {
-                    location.href = "/movies/finder.aspx?lt=1&ft=1";
-                }else{
-                    location.href = "/movies/finder.aspx?lt=1&ft=0";
-                }
-            });
-
-        });
-
-    })(jQuery);
-//]]>
-</script>
 
 
+    <ol>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.4</strong>	
+                <a href="/movies/detail-view/?midx=86058">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86058/86058_320.jpg" alt="헌트 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86058">
+                    <strong class="title">헌트</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>12.7%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.10 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030111&amp;MOVIE_CD_GROUP=20030111">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.5</strong>	
+                <a href="/movies/detail-view/?midx=86081">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86081/86081_320.jpg" alt="시맨틱 에러-더 무비 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86081">
+                    <strong class="title">시맨틱 에러-더 무비</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>6.8%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.31 
+                        <span>개봉</span>
+                        <em class="dday">D-6</em>
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030186&amp;MOVIE_CD_GROUP=20030186">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.6</strong>	
+                <a href="/movies/detail-view/?midx=85722">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85722/85722_320.jpg" alt="놉 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                        <a class="imax" href="#" data-regioncode="07">IMAX</a>
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=85722">
+                    <strong class="title">놉</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>6.6%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.17 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20029139&amp;MOVIE_CD_GROUP=20029139">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.7</strong>	
+                <a href="/movies/detail-view/?midx=83280">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83280/83280_320.jpg" alt="한산-용의 출현 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                        <a class="forDX" href="#" data-regioncode="4D14">4DX</a>
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=83280">
+                    <strong class="title">한산-용의 출현</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>4.7%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.07.27 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030310&amp;MOVIE_CD_GROUP=20023452">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+    </ol>
+
+    
+    
+    <ol >           
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.8</strong>	
+                <a href="/movies/detail-view/?midx=86008">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86008/86008_320.jpg" alt="명탐정 코난-할로윈의 신부 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                        <a class="forDX" href="#" data-regioncode="4D14">4DX</a>
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86008">
+                    <strong class="title">명탐정 코난-할로윈의 신부</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>4.2%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.07.13 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20029955&amp;MOVIE_CD_GROUP=20029955">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.9</strong>	
+                <a href="/movies/detail-view/?midx=86168">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86168/86168_320.jpg" alt="[LoL e스포츠]2022 LCK 서머 스플릿 결승전 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-12">12세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86168">
+                    <strong class="title">[LoL e스포츠]2022 LCK 서머 스플릿 결승전</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>3.7%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.28 
+                        <span>개봉</span>
+                        <em class="dday">D-3</em>
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030366&amp;MOVIE_CD_GROUP=20030366">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.10</strong>	
+                <a href="/movies/detail-view/?midx=86064">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86064/86064_320.jpg" alt="귀멸의 칼날-아사쿠사 편 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86064">
+                    <strong class="title">귀멸의 칼날-아사쿠사 편</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>3.4%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.25 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030162&amp;MOVIE_CD_GROUP=20030139">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.11</strong>	
+                <a href="/movies/detail-view/?midx=86121">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86121/86121_320.jpg" alt="사랑할 땐 누구나 최악이 된다 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                        <a class="arthouse" href="#" data-regioncode="MovieCollage">아트하우스</a>
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86121">
+                    <strong class="title">사랑할 땐 누구나 최악이 된다</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>2.0%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.25 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030270&amp;MOVIE_CD_GROUP=20030270">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.12</strong>	
+                <a href="/movies/detail-view/?midx=84879">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000084/84879/84879_320.jpg" alt="코코순이 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-all">전체</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=84879">
+                    <strong class="title">코코순이</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>1.2%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.25 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20027466&amp;MOVIE_CD_GROUP=20027466">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.13</strong>	
+                <a href="/movies/detail-view/?midx=86118">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86118/86118_320.jpg" alt="어웨이크 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86118">
+                    <strong class="title">어웨이크</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>1.0%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.24 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030267&amp;MOVIE_CD_GROUP=20030267">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.14</strong>	
+                <a href="/movies/detail-view/?midx=86029">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86029/86029_320.jpg" alt="큐브 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86029">
+                    <strong class="title">큐브</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>0.9%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.24 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030036&amp;MOVIE_CD_GROUP=20030036">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.15</strong>	
+                <a href="/movies/detail-view/?midx=86155">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86155/86155_320.jpg" alt="공조2-인터내셔날 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86155">
+                    <strong class="title">공조2-인터내셔날</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>0.9%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.09.07 
+                        <span>개봉</span>
+                        <em class="dday">D-13</em>
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030433&amp;MOVIE_CD_GROUP=20030335">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.16</strong>	
+                <a href="/movies/detail-view/?midx=81889">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000081/81889/81889_320.jpg" alt="그녀 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=81889">
+                    <strong class="title">그녀</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>0.8%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.31 
+                        <span>재개봉</span>
+                        <em class="dday">D-6</em>
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20019689&amp;MOVIE_CD_GROUP=20019689">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.17</strong>	
+                <a href="/movies/detail-view/?midx=83127">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000083/83127/83127_320.jpg" alt="미니언즈2 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-all">전체</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=83127">
+                    <strong class="title">미니언즈2</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>0.6%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.07.20 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20022752&amp;MOVIE_CD_GROUP=20022752">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.18</strong>	
+                <a href="/movies/detail-view/?midx=85852">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000085/85852/85852_320.jpg" alt="헤어질 결심 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-15">15세 이상</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                        <a class="arthouse" href="#" data-regioncode="MovieCollage">아트하우스</a>
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=85852">
+                    <strong class="title">헤어질 결심</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>0.6%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.06.29 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20029572&amp;MOVIE_CD_GROUP=20029572">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+        <li>
+            <div class="box-image">
+                <strong class="rank">No.19</strong>	
+                <a href="/movies/detail-view/?midx=86028">
+                    <span class="thumb-image">
+                        <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86028/86028_320.jpg" alt="풀타임 포스터" onerror="errorImage(this)">
+                        <span class="ico-grade grade-all">전체</span>
+                    </span>
+                </a>
+                <span class="screentype">
+                    
+                        <a class="arthouse" href="#" data-regioncode="MovieCollage">아트하우스</a>
+                    
+                </span>
+            </div>
+            <div class="box-contents">
+                <a href="/movies/detail-view/?midx=86028">
+                    <strong class="title">풀타임</strong>
+                </a>
+
+                <div class="score">
+                    <strong class="percent">예매율<span>0.3%</span></strong>
+                </div>
+
+                <span class="txt-info">
+                    <strong>
+                        2022.08.18 
+                        <span>개봉</span>
+                        
+                    </strong>
+                </span>
+                <span class="like"> 
+                    <a class="link-reservation" href="/ticket/?MOVIE_CD=20030034&amp;MOVIE_CD_GROUP=20030034">예매</a>
+                </span>
+            </div>    
+        </li>
+    
+    </ol>
+    
+    
+    
+    
+
+    
+    
+</div>
+    </div>
+    
+    <!-- .sect-moviechart -->
 <div class="sect-movie-chart">
  <ol id="movie_more_container" style="display:none" class="list-more">
     <li></li>
 </ol>
 </div>
 
-<!--
-<div class="sect-ad-benner"> 
-    <a href="javascript:tmp_alert_phototicket()" title="새창"><img src="https://img.cgv.co.kr/R2014/images/main/phototicket_978_223.jpg" alt="영화를 영원히 추억하는 방법. CGV 포토티켓" /></a>
-</div>//-->
-<!-- .sect-ad-benner  -->
 
 
-<div class="cols-rank" style="display:none">
-    <div class="col-rank-trailer">
-        <h3>인기 트레일러</h3>
-        <div class="sect-popular-trailer">
-            
-            <ul>
-            
-            </ul>
-        </div><!-- .sect-popular-trailer -->
-    </div><!-- .col-rank-trailer -->
-     
-</div>
 
-<!--
-  2016-
-- Fried : 0 ~69
-- Good :  70 ~ 84
-- Great : 85 ~ 100  
-//-->
+
+
+
 <script id="temp_movie" type="text/x-jquery-tmpl">
     <li>
         <div class="box-image" >
@@ -482,11 +854,6 @@
 
             <div class="score">
                 <strong class="percent">예매율<span>${TicketRate}%</span></strong>
-                <!--2020.05.07 개봉일 12시 30분전 프리에그, 개봉일 12시 30분후 골든에그지수 노출 기준변경-->
-                <div class="egg-gage small">
-                    <span class="${StarPoint}"></span>
-                    <span class="percent">${EggPoint}</span>
-                </div>
             </div>
 
             <span class="txt-info">
@@ -505,45 +872,15 @@
     </li>
 </script>
 
-<script type="text/javascript">
-//<![CDATA[
-
-    (function ($) {
-        $(function () {
-
-            $(".btn-more-fontbold").click(function () {
-                $(this).remove();
-                app.movie().getList({ listType: '1', orderType: '1', filterType: '0' }, setMovieListBuild);
-            });
-
-            function setMovieListBuild(result) {
-
-                $("#movie_more_container").empty();
-                $("#movie_more_container").show();
-
-                for (var i = 0; i < result.List.length; i++) {
-                    var str = result.List[i].JointCount;
-                    result.List[i].JointCount = str.split(",").join("");
-                }
-
-
-                $("#temp_movie").tmpl(result.List).appendTo("#movie_more_container");
-
-                //$('.point').point();        //평점 별 표시
-                $('.btn-like').like();      //wish list동작 처리
-                $('span.screentype a').specialTheater();    //특별관 링크
-            }
-        });
-    })(jQuery);
-//]]>
-</script>
-
 
             
-            <!--/ Contents End -->
-		 </div> 
-		<!-- /Contents Area -->
-	</div>
+<!--/ Contents End -->
+	</div> 
+<!-- /Contents Area -->
+</div>
 	
 	</body>
 </html>
+
+
+

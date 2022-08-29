@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+	<head>
+		<meta charset="UTF-8">
+		<title>login</title>
+		
+
+	  	<th:block layout:fragment="css">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+			<link rel="stylesheet" th:href="@{/css/module.css}">
+			<link rel="stylesheet" th:href="@{/css/layout.css}">
+			<link rel="stylesheet" th:href="@{/css/reset.css}">
+		</th:block>	
+	</head>
+	
+	<body>
+
+<div layout:fragment="content" id="contaniner" class="">
+        
+
+<!-- Contents Area -->
+<div id="contents" class="">        
+            
+<!-- Contents Start -->			
+
+<!-- 실컨텐츠 시작 -->
+<div class="wrap-movie-detail" id="select_main">
+
+
+<div class="sect-base-movie">
+    <h3><strong>귀멸의 칼날-아사쿠사 편</strong>기본정보</h3>
+    <div class="box-image">
+        <a href="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86064/86064_1000.jpg" title="포스터 크게 보기 새창" target="_blank">
+            <span class="thumb-image"> 
+                <img src="https://img.cgv.co.kr/Movie/Thumbnail/Poster/000086/86064/86064_320.jpg" alt="귀멸의 칼날-아사쿠사 편 포스터 새창" onerror="errorImage(this)"/>
+                <span class="ico-posterdetail">포스터 크게 보기</span>
+                <span class="ico-grade grade-15"> 15세 이상</span>
+            </span> 
+        </a> 
+    </div>
+    <div class="box-contents">
+        <div class="title"> 
+            <strong>귀멸의 칼날-아사쿠사 편</strong>
+            <em class="round lightblue"><span>현재상영중</span></em>
+            
+            
+            <p>Demon Slayer: Kimetsu no Yaiba Asakusa Arc</p>
+        </div>
+        <div class="score"> 
+            <strong class="percent">예매율&nbsp;<span>3.4%</span></strong>
+            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 -->            
+            <div class='egg-gage small'>
+                                            <span class='egg good'></span>
+                                            <span class='percent'>?</span>
+                                        </div>
+        </div>
+        <!-- 떨어지는 얘 이전 요소에 class=on을 넣는다 -->
+        <div class="spec">
+            <dl>
+                <dt>감독 :&nbsp;</dt>
+                <dd>
+                    
+                        
+                        <a href="/movies/persons/?pidx=121568">소토자키 하루오</a>                    
+                        
+                </dd>
+                
+                <dd>
+                    
+                </dd>
+
+                <dt>&nbsp;/ 배우 :&nbsp;</dt>
+                <dd class="on">
+                    
+                        
+                        <a href="/movies/persons/?pidx=117000">하나에 나츠키</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=121569">키토 아카리</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=56837">세키 토시히코</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=46057">사카모토 마아야</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=121827">야마시타 다이키</a>                    
+                        
+                        ,&nbsp;
+                        <a href="/movies/persons/?pidx=118522">시모노 히로</a>                    
+                        
+                </dd>
+
+                <dt>장르 :&nbsp;애니메이션</dt> 
+                <dd></dd>
+                <dt>&nbsp;/ 기본 :&nbsp;</dt>
+                <dd class="on">15세 이상,&nbsp;103분,&nbsp;일본</dd>
+                <dt>개봉 :&nbsp;</dt>
+                <dd class="on">2022.08.25</dd>
+
+
+            
+
+            </dl>
+        </div>
+        <span class="screentype">
+        
+        </span>
+
+        <span class="like">
+            <!-- 2020.05.07 영화찜하기 -> 프리에그 선택 변경(조회하여 노출) -->
+            <a class="link-count" href="javascript:void (0);"><i class="sprite_preegg btn_md default"></i>프리에그</a>
+        
+            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030162&MOVIE_CD_GROUP=20030139">예매</a> 
+        
+        </span>
+
+    </div>
+</div>
+<!-- .sect-base -->
+
+
+
+    <div class="cols-content" id="menu">
+        <div class="col-detail">
+            <!-- 메뉴가 선택되면 a 에 title="선택" 이라고 넣는다 -->
+            <ul class="tab-menu">
+                <li class="on"><a title="현재 선택됨" href="/movies/detail-view/?midx=86064#menu">주요정보 </a></li>             
+                <li><a href="/movies/detail-view/trailer.aspx?midx=86064#menu">트레일러</a></li>
+                <li><a href="/movies/detail-view/still-cut.aspx?midx=86064#menu">스틸컷</a></li>
+                <li><a href="/movies/detail-view/?midx=86064#commentReg">평점/리뷰</a></li>               
+                <li class="last"><a href="/movies/detail-view/show-times.aspx?midx=86064#menu">상영시간표</a></li>
+            </ul>
+            <div class="sect-story-movie">
+                귀살대에 입대한 탄지로는 매일 소녀가 실종된다고 하는 마을로 향한다.<br />
+혈귀의 냄새는 나지만 그 모습을 찾을 수 없는 가운데, 새로운 소녀에게 혈귀의 손이 다가온다.&nbsp;<br />
+<br />
+그다음으로 탄지로가 방문한 곳은 아사쿠사.<br />
+화려한 도시와 즐비한 상점에 당황하는 탄지로는 그곳에서 혈귀의 냄새를 찾아낸다.&nbsp;<br />
+그 냄새는 인간을 혈귀로 바꿀 수 있는 유일한 존재이자<br />
+탄지로의 숙적이기도 한 키부츠지 무잔의 것이었다.<br />
+이윽고 탄지로의 앞에 타마요와 유시로가 나타나는데&hellip;&nbsp;
+            </div>
+            <!-- .sect-story -->
+            <!-- 2020.05.07 성별예매분포, 연령별예매분포 UI 변경 -->
+            <div id="ctl00_PlaceHolderContent_Section_Chart" class="sect-graph sect-graph-emotion">
+                <ul class="graph">
+                    <li>
+                        <strong>성별 예매 분포</strong>
+                        <div id="jqplot_sex" class="chart"></div>
+                    </li>
+                    <li>
+                        <strong>연령별 예매 분포</strong>
+                        <div id="jqplot_age" class="chart"></div>
+                    </li>
+                </ul>
+            </div>
+            <!-- .sect-graph -->
+
+            <div class="movie-detail-ad">
+                <iframe src="http://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/sub@SponsorBar_800" width="800" height="90" title="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" name="SponsorBar_800" id="SponsorBar_800"></iframe>
+            </div>
+            <!-- .sect-staff -->
+            <div id="ctl00_PlaceHolderContent_Section_Trailer" class="sect-trailer">
+                <div class="heading">
+                    <h4>트레일러</h4><span id="ctl00_PlaceHolderContent_TrailerTotalCount" class="count">1건</span><a class="link-more" href="trailer.aspx?midx=86064">더보기</a>
+                </div>
+                <ul>
+                <!-- 사진 동영상 조회 -->
+                
+                    <li>
+                        <div class="box-image">
+                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="204990">
+                                <span class="thumb-image">
+                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/86064/86064204990_1024.jpg" alt="[귀멸의 칼날-아사쿠사 편]15초 예고편" onerror="errorImage(this, {'type':'landscape'})"/>
+                                    <span class="ico-play">영상보기</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="box-contents">
+                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="204990">
+                                <strong class="title">
+                                    
+                                    <span class="ico-trailer hd">HD</span>
+                                    15초 예고편
+                                </strong>
+                            </a>
+                            <span class="txt-info">2022.07.22</span>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div><!-- .sect-trailer -->
+            <div id="ctl00_PlaceHolderContent_Section_Still_Cut" class="sect-stillcut">
+                <div class="heading">
+                    <h4>스틸컷</h4><span class="count"><strong id="stillcut_current">1</strong>/5건</span><a class="link-more" href="still-cut.aspx?midx=86064">더보기</a>
+                </div>
+                <div class="slider-wrap">
+                    <div class="slider" id="still_motion">
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86064/86064204989_727.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86064/86064204988_727.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86064/86064204987_727.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86064/86064204986_727.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+                        
+                        <div class="item-wrap">
+                            <div class="item">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000086/86064/86064204985_727.jpg" alt="귀멸의 칼날-아사쿠사 편" onerror="errorImage(this)" />
+                            </div>
+                        </div>
+         
+                        <button type="button" class="btn-prev">이전 페이지 이동</button>
+                        <button type="button" class="btn-next">다음 페이지 이동</button>
+                    </div>
+                </div>
+            </div>
+            <!-- ./sect-stillcut -->
+     </div>       
+	</div>
+</div>
+    <span style="display:none" class="modifyCommentDummy"></span>
+</div>
+         
+<!--/ Contents End -->
+</div>
+		 
+	<footer></footer>		
+</body>
+</html>	
