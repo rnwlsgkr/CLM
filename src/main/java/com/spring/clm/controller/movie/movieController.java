@@ -83,10 +83,10 @@ public class movieController {
 		return mv;
 	}
 	
-	@GetMapping("/mSemanic")
+	@GetMapping("/mSemantic")
 	public ModelAndView mSemanicView() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/movie/mSemanic.html");
+		mv.setViewName("/movie/mSemantic.html");
 		
 		
 		return mv;
