@@ -49,27 +49,14 @@
             
             <p>Hansan: Rising Dragon</p>
         </div>
-        <div class="score"> 
-            <strong class="percent">예매율&nbsp;<span>4.7%</span></strong>
-            <!-- 2020.05.07 개봉전 프리에그 노출, 개봉후 골든에그지수 노출변경 -->            
-            <div class='egg-gage small'>
-                                            <span class='egg great'></span>
-                                            <span class='percent'>96%</span>
-                                        </div>
-        </div>
-        <!-- 떨어지는 얘 이전 요소에 class=on을 넣는다 -->
+
         <div class="spec">
             <dl>
                 <dt>감독 :&nbsp;</dt>
                 <dd>
-                    
-                        
-                        <a href="/movies/persons/?pidx=2622">김한민</a>                    
-                        
-                </dd>
-                
-                <dd>
-                    
+                    <a href="/movies/persons/?pidx=2622">김한민</a> 
+                </dd>                
+                <dd>                    
                 </dd>
 
                 <dt>&nbsp;/ 배우 :&nbsp;</dt>
@@ -128,14 +115,6 @@
             
         </span>
 
-        <span class="like">
-            <!-- 2020.05.07 영화찜하기 -> 프리에그 선택 변경(조회하여 노출) -->
-            <a class="link-count" href="javascript:void (0);"><i class="sprite_preegg btn_md default"></i>프리에그</a>
-        
-            <a class="link-reservation" href="/ticket/?MOVIE_CD=20030310&MOVIE_CD_GROUP=20023452">예매</a> 
-        
-        </span>
-
     </div>
 </div>
 <!-- .sect-base -->
@@ -146,14 +125,6 @@
 
     <div class="cols-content" id="menu">
         <div class="col-detail">
-            <!-- 메뉴가 선택되면 a 에 title="선택" 이라고 넣는다 -->
-            <ul class="tab-menu">
-                <li class="on"><a title="현재 선택됨" href="/movies/detail-view/?midx=83280#menu">주요정보 </a></li>             
-                <li><a href="/movies/detail-view/trailer.aspx?midx=83280#menu">트레일러</a></li>
-                <li><a href="/movies/detail-view/still-cut.aspx?midx=83280#menu">스틸컷</a></li>
-                <li><a href="/movies/detail-view/?midx=83280#commentReg">평점/리뷰</a></li>               
-                <li class="last"><a href="/movies/detail-view/show-times.aspx?midx=83280#menu">상영시간표</a></li>
-            </ul>
             <div class="sect-story-movie">
                 <p>나라의 운명을 바꿀 압도적 승리의 전투가 시작된다!</p>
 
@@ -171,138 +142,46 @@
 <p>1592년 여름, 음력 7월 8일 한산도 앞바다,<br />
 압도적인 승리가 필요한 조선의 운명을 건 지상 최고의 해전이 펼쳐진다.</p>
             </div>
-            <!-- .sect-story -->
-            <!-- 2020.05.07 성별예매분포, 연령별예매분포 UI 변경 -->
-            <div id="ctl00_PlaceHolderContent_Section_Chart" class="sect-graph sect-graph-emotion">
-                <ul class="graph">
-                    <li>
-                        <strong>성별 예매 분포</strong>
-                        <div id="jqplot_sex" class="chart"></div>
-                    </li>
-                    <li>
-                        <strong>연령별 예매 분포</strong>
-                        <div id="jqplot_age" class="chart"></div>
-                    </li>
-                </ul>
-            </div>
-            <!-- .sect-graph -->
 
-            <div class="movie-detail-ad">
-                <iframe src="http://ad.cgv.co.kr/NetInsight/html/CGV/CGV_201401/sub@SponsorBar_800" width="800" height="90" title="" frameborder="0" scrolling="no" marginwidth="0" marginheight="0" name="SponsorBar_800" id="SponsorBar_800"></iframe>
-            </div>
-            <!-- .sect-staff -->
-            <div id="ctl00_PlaceHolderContent_Section_Trailer" class="sect-trailer">
+<!-- .sect-trailer -->
+<div id="ctl00_PlaceHolderContent_Section_Still_Cut" class="sect-stillcut">
                 <div class="heading">
-                    <h4>트레일러</h4><span id="ctl00_PlaceHolderContent_TrailerTotalCount" class="count">5건</span><a class="link-more" href="trailer.aspx?midx=83280">더보기</a>
-                </div>
-                <ul>
-                <!-- 사진 동영상 조회 -->
-                
-                    <li>
-                        <div class="box-image">
-                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
-                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205788">
-                                <span class="thumb-image">
-                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/83280/83280205788_1024.jpg" alt="[한산-용의 출현]분장의 비밀 영상" onerror="errorImage(this, {'type':'landscape'})"/>
-                                    <span class="ico-play">영상보기</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="box-contents">
-                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205788">
-                                <strong class="title">
-                                    
-                                    <span class="ico-trailer hd">HD</span>
-                                    분장의 비밀 영상
-                                </strong>
-                            </a>
-                            <span class="txt-info">2022.08.19</span>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <div class="box-image">
-                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
-                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205012">
-                                <span class="thumb-image">
-                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/83280/83280205012_1024.jpg" alt="[한산-용의 출현]스페셜 예고편" onerror="errorImage(this, {'type':'landscape'})"/>
-                                    <span class="ico-play">영상보기</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="box-contents">
-                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="205012">
-                                <strong class="title">
-                                    
-                                    <span class="ico-trailer hd">HD</span>
-                                    스페셜 예고편
-                                </strong>
-                            </a>
-                            <span class="txt-info">2022.07.25</span>
-                        </div>
-                    </li>
-                    
-                    <li>
-                        <div class="box-image">
-                            <!-- TODO : 동영상 팝업 창 작업 후 링크 걸어야 함 //-->
-                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="204934">
-                                <span class="thumb-image">
-                                    <img src="https://img.cgv.co.kr/Movie/Thumbnail/Trailer/83280/83280204934_1024.jpg" alt="[한산-용의 출현]캐릭터 하이라이트 영상" onerror="errorImage(this, {'type':'landscape'})"/>
-                                    <span class="ico-play">영상보기</span>
-                                </span>
-                            </a>
-                        </div>
-                        <div class="box-contents">
-                            <a href="#" title="새창" class="movie_player_popup" data-gallery-idx="204934">
-                                <strong class="title">
-                                    
-                                    <span class="ico-trailer hd">HD</span>
-                                    캐릭터 하이라이트 영상
-                                </strong>
-                            </a>
-                            <span class="txt-info">2022.07.20</span>
-                        </div>
-                    </li>
-                    
-                </ul>
-            </div><!-- .sect-trailer -->
-            <div id="ctl00_PlaceHolderContent_Section_Still_Cut" class="sect-stillcut">
-                <div class="heading">
-                    <h4>스틸컷</h4><span class="count"><strong id="stillcut_current">1</strong>/5건</span><a class="link-more" href="still-cut.aspx?midx=83280">더보기</a>
+                    <h4>스틸컷</h4><span class="count"><strong id="stillcut_current">1</strong>/5건</span>
                 </div>
                 <div class="slider-wrap">
                     <div class="slider" id="still_motion">
                         
                         <div class="item-wrap">
-                            <div class="item">
-                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205729_727.jpg" alt="한산-용의 출현" onerror="errorImage(this)" />
+                            <div class="item" style="width: 800px; height: 450px;">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205729_727.jpg" alt="한산-용의 출현" onerror="errorImage(this)" src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205729_727.jpg" style="height: 100%;">
                             </div>
                         </div>
                         
                         <div class="item-wrap">
-                            <div class="item">
-                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205728_727.jpg" alt="한산-용의 출현" onerror="errorImage(this)" />
+                            <div class="item" style="width: 800px; height: 450px; display: none;">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205728_727.jpg" alt="한산-용의 출현" onerror="errorImage(this)" src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205728_727.jpg" style="margin-top: 22.5px;">
                             </div>
                         </div>
                         
                         <div class="item-wrap">
-                            <div class="item">
-                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205727_727.JPG" alt="한산-용의 출현" onerror="errorImage(this)" />
+                            <div class="item" style="width: 800px; height: 450px; display: none;">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205727_727.JPG" alt="한산-용의 출현" onerror="errorImage(this)">
                             </div>
                         </div>
                         
                         <div class="item-wrap">
-                            <div class="item">
-                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205726_727.JPG" alt="한산-용의 출현" onerror="errorImage(this)" />
+                            <div class="item" style="width: 800px; height: 450px; display: none;">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205726_727.JPG" alt="한산-용의 출현" onerror="errorImage(this)">
                             </div>
                         </div>
                         
                         <div class="item-wrap">
-                            <div class="item">
-                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205725_727.JPG" alt="한산-용의 출현" onerror="errorImage(this)" />
+                            <div class="item" style="width: 800px; height: 450px; display: none;">
+                                <img data-src="https://img.cgv.co.kr/Movie/Thumbnail/StillCut/000083/83280/83280205725_727.JPG" alt="한산-용의 출현" onerror="errorImage(this)">
                             </div>
                         </div>
                         
+
                         
                         <button type="button" class="btn-prev">이전 페이지 이동</button>
                         <button type="button" class="btn-next">다음 페이지 이동</button>
@@ -314,6 +193,8 @@
 </div>
          
 <!--/ Contents End -->
+<br><br><br><br>
+</div>
 </div>
 		 
 	<footer></footer>		
