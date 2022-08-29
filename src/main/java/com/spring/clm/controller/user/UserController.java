@@ -32,6 +32,46 @@ public class UserController {
 		
 		return mv;
 	}
+	
+	@GetMapping("/mypage_edit_myinfo")
+	public ModelAndView mypage() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/mypage_edit_myinfo.html");
+		
+		return mv;
+	}
+	
+	@GetMapping("/mypage_home")
+	public ModelAndView mypage_home() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/mypage_home.html");
+		
+		return mv;
+	}
+	
+	@GetMapping("/mypage_leave")
+	public ModelAndView mypage_leave() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/mypage_leave.html");
+		
+		return mv;
+	}
+	
+	@GetMapping("/mypage_leave_completion")
+	public ModelAndView mypage_leave_completion() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/mypage_leave_completion.html");
+		
+		return mv;
+	}
+	
+	@GetMapping("/mypage_myprofile")
+	public ModelAndView mypage_myprofile() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/myprofile.html");
+		
+		return mv;
+	}
 
 }
 
