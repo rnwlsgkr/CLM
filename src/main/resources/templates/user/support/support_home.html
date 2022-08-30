@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	
+  	<th:block layout:fragment="css">
+		<link rel="stylesheet" th:href="@{/css/reset.css}" >
+		<link rel="stylesheet" th:href="@{/css/common.css}" >
+		<link rel="stylesheet" th:href="@{/css/layout.css}" >
+		<link rel="stylesheet" th:href="@{/css/content.css}" >
+		<link rel="stylesheet" th:href="@{/css/module20211209.css}" >
+		<link rel="stylesheet" th:href="@{/css/customer.css}" >
+		 > 
+	</th:block>	
+</head>
+
+
+<body layout:fragment="content" class="" style="">
+
+<div class="skipnaiv">
+	<a href="#contents" id="skipHeader">메인 컨텐츠 바로가기</a>
+</div>
+<div id="cgvwrap">
+
+	<!-- Contaniner -->
+	<div id="contaniner" class=""><!-- 벽돌 배경이미지 사용 시 class="bg-bricks" 적용 / 배경이미지가 없을 경우 class 삭제  -->
+
+		<!-- Contents Area -->
+<div id="contents">
+	<!-- Contents Start -->
+	<div class="cols-content">
+		
+<div class="col-aside">
+    <h2>
+        고객센터 메뉴</h2>
+    <div class="snb">
+        <ul>
+            <li class="on"><a href="/support/default.aspx">고객센터 메인<i></i></a></li>
+            <li class=""><a href="/support/faq/default.aspx" title="현재선택">자주찾는 질문<i></i></a></li>
+            <li class=""><a href="/support/news/default.aspx">공지/뉴스<i></i></a></li>
+            <li class=""><a href="/user/support/qna">문의 게시판<i></i></a></li>
+          
+        </ul>
+    </div>
+    
+</div>
+
+		<div class="col-detail">
+			
+			<div class="customer_notice_area">
+				
+				<div class="notice_area">
+                    <a href="/support/news/default.aspx">
+					    <span class="tit">자주찾는 질문</span>
+                    </a>
+					<ul class="txt">
+                    
+                            <li><span><a href="/support/news/detail-view.aspx?idx=7856&amp;type=4">[기타] 22년 VIP 선정 기준 변경 및 추가 기준 관련 안내</span></a><span class="day">2021.09.01</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7847&amp;type=4">[기타] 2021 SVIP 스페셜 기프트 신청 안내 </a><span class="day">2021.06.29</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7804&amp;type=2">[극장] 연말연시 특별 방역 조치에 따른 극장 운영 시간 조정 안내</a><span class="day">2020.12.04</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7778&amp;type=4">[기타] 포토플레이 서비스 개선 안내 </a><span class="day">2020.09.15</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7754&amp;type=4">[기타] 영진위 지원사업-“모든요일 6천원 할인”이벤트 조기 종료 안내 (8/16 종료)</a><span class="day">2020.08.16</span></li>
+                        
+					</ul>
+					<a href="/support/news/default.aspx" class="more2">공지/뉴스 더보기</a>
+					
+				</div>
+			</div>
+			
+			
+						<div class="customer_notice_area" style="margin-top:10px;">
+				
+				<div class="notice_area">
+                    <a href="/support/news/default.aspx">
+					    <span class="tit">공지/뉴스</span>
+                    </a>
+					<ul class="txt">
+                    
+                            <li><a href="/support/news/detail-view.aspx?idx=7856&amp;type=4">[기타] 22년 VIP 선정 기준 변경 및 추가 기준 관련 안내</a><span class="day">2021.09.01</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7847&amp;type=4">[기타] 2021 SVIP 스페셜 기프트 신청 안내 </a><span class="day">2021.06.29</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7804&amp;type=2">[극장] 연말연시 특별 방역 조치에 따른 극장 운영 시간 조정 안내</a><span class="day">2020.12.04</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7778&amp;type=4">[기타] 포토플레이 서비스 개선 안내 </a><span class="day">2020.09.15</span></li>
+                        
+                            <li><a href="/support/news/detail-view.aspx?idx=7754&amp;type=4">[기타] 영진위 지원사업-“모든요일 6천원 할인”이벤트 조기 종료 안내 (8/16 종료)</a><span class="day">2020.08.16</span></li>
+                        
+					</ul>
+					<a href="/support/news/default.aspx" class="more">공지/뉴스 더보기</a>
+					
+				</div>
+			</div>
+			
+			
+			
+			
+			
+			
+		</div>
+	</div>
+	<!-- //Contents End -->
+</div>
+
+            
+            <!--/ Contents End -->
+		 </div>
+		<!-- /Contents Area -->
+	</div>
+    <!-- E Contaniner -->
+    
+    <!-- S Popup -->
+    <div class="com_pop_wrap">
+        <div class="com_pop_fog"></div>
+    </div>
+    <div class="pop_wrap">
+    <!-- S > [팝업] 지원 OS 업데이트 유도-->
+        <div id="pop_supportOS" class="popup" style="display:none">
+            <div class="pop_iexp_wrap" style="position:fixed; left:50%; top:50%; width:600px; margin:-165px 0 0 -300px; z-index:1000;">
+                <div class="pi_headline">
+                    <img src="https://img.cgv.co.kr/images/popup/1606_iexp/pop_iexp_headline2.jpg" alt="CGV 홈페이지는 고객님께서 사용중인 MS Windows XP에서 정상적인 서비스 이용이 어려울 수 있으며, OS업데이트를 권장합니다.">
+                </div>
+                <div class="down_app">
+                    <p><img src="https://img.cgv.co.kr/images/popup/1606_iexp/pop_iexp_downtxt.jpg" alt="OS 업데이트가 어려운 경우 모바일앱을 이용하세요!!!"></p>
+                    <a class="btn" href="https://itunes.apple.com/kr/app/id370441190?mt=8" target="_blank"><img src="https://img.cgv.co.kr/images/popup/1606_iexp/btn_down_ios.jpg" alt="Ios down"></a>
+                    <a class="btn" href="https://play.google.com/store/apps/details?id=com.cgv.android.movieapp" target="_blank"><img src="https://img.cgv.co.kr/images/popup/1606_iexp/btn_down_android.jpg" alt="Android down"></a>
+                </div>
+                <a class="btn_close">닫기</a>
+            </div>
+         </div>
+    <!-- S > [팝업] 지원 브라우저 다운로드 유도-->
+         <div id="pop_supportBrower" class="popup" style="display:none">
+            <div class="pop_iexp_wrap" style="position:fixed; left:50%; top:50%; width:600px; margin:-265px 0 0 -300px; z-index:1000;">
+                <div class="pi_headline">
+                    <img src="https://img.cgv.co.kr/images/popup/1606_iexp/pop_iexp_headline1.jpg" alt="CGV 홈페이지는 Internet Explorer 9이상에서 최적의 서비스 이용이 가능합니다. IE9 이하 브라우저에서 이용 시 정상적인 서비스 이용이 어려울 수 있으며, 브라우저 업그레이드 하시기를 권장합니다.">
+                </div>
+                <ul class="down_browser">
+                    <li><a href="https://www.microsoft.com/ko-kr/edge" target="_blank"><img src="https://img.cgv.co.kr/images/popup/1606_iexp/btn_down_ie.jpg" alt="Internet Explorer 다운받기"></a></li>
+                    <li><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><img src="https://img.cgv.co.kr/images/popup/1606_iexp/btn_down_chrome.jpg" alt="Chrome 다운받기"></a></li>
+                </ul>
+                <div class="down_app">
+                    <p><img src="https://img.cgv.co.kr/images/popup/1606_iexp/pop_iexp_downtxt.jpg" alt="OS 업데이트가 어려운 경우 모바일앱을 이용하세요!"></p>
+                    <a class="btn" href="https://itunes.apple.com/kr/app/id370441190?mt=8" target="_blank"><img src="https://img.cgv.co.kr/images/popup/1606_iexp/btn_down_ios.jpg" alt="Ios down"></a>
+                    <a class="btn" href="https://play.google.com/store/apps/details?id=com.cgv.android.movieapp " target="_blank"><img src="https://img.cgv.co.kr/images/popup/1606_iexp/btn_down_android.jpg" alt="Android down"></a>
+                </div>
+                <a class="btn_close">닫기</a>
+            </div>
+        </div>
+	</div>
+
+    <!-- E Popup -->
+    
+    <!-- S 예매하기 및 TOP Fixed 버튼 -->
+    <div class="fixedBtn_wrap">
+     
+        <a href="/ticket/" class="btn_fixedTicketing">예매하기</a>
+        
+        <a href="#none" class="btn_gotoTop"><img src="https://img.cgv.co.kr/R2014/images/common/btn/gotoTop.png" alt="최상단으로 이동"></a>
+    </div>
+    
+    <!-- E 예매하기 및 TOP Fixed 버튼 -->
+	
+    
+
+
+
+</body>
+
+</html>

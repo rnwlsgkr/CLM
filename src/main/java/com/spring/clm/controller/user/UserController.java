@@ -26,53 +26,74 @@ public class UserController {
 	}
 	
 	@GetMapping("/join")
-	public ModelAndView join() {
+	public ModelAndView joinView() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("/user/join.html");
 		
 		return mv;
 	}
 	
-	@GetMapping("/mypage_edit_myinfo")
-	public ModelAndView mypage() {
+	// S mypage  ************************************************************
+
+	
+	@GetMapping("/mypage/mypage_home")
+	public ModelAndView mypage_homeView() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/user/mypage_edit_myinfo.html");
+		mv.setViewName("/user/mypage/mypage_home.html");
 		
 		return mv;
 	}
 	
-	@GetMapping("/mypage_home")
-	public ModelAndView mypage_home() {
+	@GetMapping("/mypage/edit_myinfo")
+	public ModelAndView mypageView() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/user/mypage_home.html");
+		mv.setViewName("/user/mypage/edit_myinfo.html");
 		
 		return mv;
 	}
 	
-	@GetMapping("/mypage_leave")
-	public ModelAndView mypage_leave() {
+	@GetMapping("/mypage/leave")
+	public ModelAndView mypage_leaveView() {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/user/mypage_leave.html");
-		
-		return mv;
-	}
-	
-	@GetMapping("/mypage_leave_completion")
-	public ModelAndView mypage_leave_completion() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/user/mypage_leave_completion.html");
-		
-		return mv;
-	}
-	
-	@GetMapping("/mypage_myprofile")
-	public ModelAndView mypage_myprofile() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("/user/myprofile.html");
+		mv.setViewName("/user/mypage/leave.html");
 		
 		return mv;
 	}
 
+	
+	@GetMapping("/mypage/leave_completion")
+	public ModelAndView mypage_leave_completionView() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/mypage/leave_completion.html");
+		
+		return mv;
+	}
+	
+	@GetMapping("/mypage/profile")
+	public ModelAndView mypage_profileView() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/mypage/profile.html");
+		
+		return mv;
+	}
+
+	@GetMapping("/support/support_home")
+	public ModelAndView support_homeView() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/support/support_home.html");
+		
+		return mv;
+	}
+	
+	@GetMapping("/support/qna")
+	public ModelAndView qnaView() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/support/qna.html");
+		
+		return mv;
+	}
+	
+	// E mypage ************************************************************
 }
 
 

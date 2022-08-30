@@ -1,0 +1,181 @@
+
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	
+  	<th:block layout:fragment="css">
+		<link rel="stylesheet" th:href="@{/css/reset.css}" >
+		<link rel="stylesheet" th:href="@{/css/common.css}" >
+		<link rel="stylesheet" th:href="@{/css/layout.css}" >
+		<link rel="stylesheet" th:href="@{/css/content.css}" >
+		<link rel="stylesheet" th:href="@{/css/module20211209.css}" >
+		 > 
+	</th:block>	
+</head>
+
+
+<body layout:fragment="content" class="" style="">
+
+<div id="cgvwrap">
+        
+
+	<!-- Contaniner -->
+	<div id="contaniner" class=""><!-- 벽돌 배경이미지 사용 시 class="bg-bricks" 적용 / 배경이미지가 없을 경우 class 삭제  -->
+        
+
+		<!-- Contents Area -->
+		 <div id="contents" class="">
+        
+            
+            <!-- Contents Start -->
+			
+<div class="sect-common" style="height:250px;">
+    <div class="mycgv-info-wrap" style="height:190px; background-color:rgb(247, 247, 247)">
+        <div class="sect-person-info">
+        	<h2 class="hidden">개인화 영역</h2> 
+        	<div class="box-image">
+				<span class="thumb-image">
+					<img src="http://img.cgv.co.kr/R2014/images/common/default_profile.gif" alt="장성훈님 프로필 사진" onerror="errorImage(this, {'type':'profile'})">
+					<span class="profile-mask"></span>
+				</span>
+        	</div>
+        	<div class="box-contents newtype">
+        		<div class="person-info">
+        			<strong>장성훈님</strong>
+        			<em>scardzem</em>
+        			<span>닉네임 : <i>닉네임을 설정해주세요.</i> </span>
+        			<button id="go_edit_page" type="button" title="새창열림">나의 정보 변경</button>
+        		</div>
+        		<div class="grade-info">
+                    <p style="margin-bottom:4px;color: rgb(99, 99, 99);font-family: 'NanumBarunGothicBold', '맑은 고딕', '돋움', Dotum, sans-serif;font-size: 17px;line-height: 20px; font-weight:100;">
+                            반갑습니다             
+                    </p>
+        		</div>
+        	</div>
+        </div>
+        
+    </div>
+</div>
+
+<div class="cols-content" id="menu" style="border-top:solid 1px #e1e1e1;">
+    <div class="col-aside">
+	    <h2>MY CGV 서브메뉴</h2>
+	    <div class="snb">
+	        <ul>
+	            <li class="on">
+                    <a href="/user/mypage/mypage_home" title="현재 선택">MY CLM HOME <i></i></a>
+		                </li>
+	            <li>
+                    <a href="/user/mypage/mypage_home">회원정보<i></i></a>
+	                <ul>
+                         <li>
+                            <a href="/user/mypage/edit_myinfo">개인정보 변경</a>
+                        </li>
+	                    <li>
+                            <a href="/user/mypage/leave">회원탈퇴</a>
+                        </li>
+	                </ul>
+            	</li>
+                 <li>
+                    <a href="/user/mypage/profile">프로필 관리<i></i></a>
+                </li>
+	        </ul>
+	    </div>
+    </div>
+    	
+    	
+    	
+<div class="col-detail" id="mycgv_contents">
+	    
+<div class="tit-mycgv">
+    <h3>나의 프로필</h3>
+</div>
+
+
+<div>
+
+</div>
+<div class="tbl-form">
+    <table summary="나의프로필정보 이름,아이디, 닉네임,프로필이미지 표기">
+        <caption>나의프로필정보</caption>
+        <colgroup>
+        <col width="19%">
+        <col width="*">
+        </colgroup>
+        <tbody>
+            <tr>
+                <th scope="row">이름</th>
+                <td><strong>장성훈</strong></td>
+            </tr>
+            <tr>
+                <th scope="row">아이디</th>
+                <td><span>scardzem</span></td>
+            </tr>
+            <tr>
+                <th scope="row"><label for="nick_name">닉네임</label></th>
+                <td>
+                    <p>한글, 영문, 숫자 혼용 가능 (한글 기준 10자 이내)</p>
+                    <input type="hidden" id="old_nick_name" name="old_nick_name" value=""> 
+                    <input type="text" id="nick_name" name="nick_name" value="" required="required" maxlength="10" class="s-medium"> 
+                    <button id="check_duplication" type="button" class="round gray"><span>중복확인</span></button>
+                </td>
+            </tr>
+            
+            <tr>
+                <th scope="row">프로필이미지</th>
+                <td>
+                    <input type="hidden" id="user_image" name="user_image" value="">
+                    <input type="hidden" id="user_small_image" name="user_small_image" value="">
+                    <div class="sect-profile-img">
+                        <div class="box-image">
+                            <span class="thumb-image">
+                                <img id="img_userprofileimage" src="http://img.cgv.co.kr/R2014/images/common/default_profile.gif" alt="장성훈님 프로필 사진" onerror="errorImage(this, {type:'profile'})">
+                                <span class="profile-mask"></span>
+                            </span>
+                        </div>
+                        <div class="box-contents">
+                            
+                            <p>jpg, gif, BMP 파일만 등록 가능합니다. (최대 3M)</p>
+                            <input type="file" id="profile_upload_file" name="profile_upload_file" title="내용">
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="set-btn aright"><button type="submit" id="set_profile" class="round inred on"><span>등록하기</span></button></div>
+</form>
+
+	</div>
+	
+</div>
+</div>
+            <!--/ Contents End -->
+		 </div>
+		<!-- /Contents Area -->
+	</div>
+    <!-- E Contaniner -->
+    
+    
+    <!-- S 예매하기 및 TOP Fixed 버튼 -->
+    <div class="fixedBtn_wrap">
+     
+        <a href="#none" class="btn_gotoTop"><img src="https://img.cgv.co.kr/R2014/images/common/btn/gotoTop.png" alt="최상단으로 이동"></a>
+    </div>
+    
+    <!-- E 예매하기 및 TOP Fixed 버튼 -->
+	
+    
+
+
+
+</body>
+
+</html>

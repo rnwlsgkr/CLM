@@ -16,7 +16,7 @@
 .cols-content .col-detail:first-child{ float:left; }
 .cols-content .col-detail + .col-aside{ float:right;}
 .cols-content .col-aside:first-child{ float:left;}
-.cols-content .col-aside + .col-detail{ float:right;}
+.cols-content .col-aside + .col-detail{ float:right; }
 /* 관람가격안내 관람등급 안내 위치 css */
 .col-detail .descri-info.theater{ top:89px;display:none}
 .col-detail .descri-info.movie{ top:136px;display:none}
@@ -37,7 +37,7 @@
 .cols-content .col-aside .snb > ul > li:hover, 
 .cols-content .col-aside .snb > ul > li:focus, 
 .cols-content .col-aside .snb > ul > li.on {margin-top:1px; border-top:0 none;}
-.cols-content .col-aside .snb > ul > li > a {width:155px; height:34px; padding-left:5px; color:#222; font-weight:500; font-size:15px; line-height:34px;}
+.cols-content .col-aside .snb > ul > li > a {width:155px; height:34px; padding-left:5px; color:#222; font-weight:500; font-size:14px; line-height:34px;}
 .cols-content .col-aside .snb > ul > li:hover > a, 
 .cols-content .col-aside .snb > ul > li > a:focus,
 .cols-content .col-aside .snb > ul > li.on > a {background-color:#fb4357; color:#fdfcf0;}
