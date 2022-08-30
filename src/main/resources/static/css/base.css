@@ -711,7 +711,7 @@ button.btn_more {width:310px; height:50px; border:1px solid #ddd; background-col
 #contents .cont_header {padding-top:75px; text-align:center;}
 #contents .cont_header .h_desc {padding-top:30px; color:#555; font-size:16px;}
 #contents .cont_header .btn {font-size:14px;}
-#contents .cont_area {padding-top:60px; text-align-last:left;}
+#contents .cont_area {padding-top:20px; text-align-last:left;}
 
 /* 컨텐츠 와이드 */
 #contents.wide {max-width:none;}

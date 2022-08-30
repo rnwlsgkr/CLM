@@ -23,7 +23,7 @@
 
 /* 본인 인증 */
 .member_join {margin-top:-10px;}
-.member_join .btn_sec {margin-top:40px; text-align-last:center;}
+.member_join .btn_sec {margin-top:40px; text-align-last:center; display:flex; justify-content: center;}
 .member_join .step_join {text-align:center;}
 .member_join .step_join ul {display:inline-block; *padding-left:204px;}
 .member_join .step_join ul.col5 {*padding-left:127px;}

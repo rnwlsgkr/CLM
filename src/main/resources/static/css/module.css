@@ -2776,7 +2776,11 @@ div[class^="sect-"] .btn-itemmore{ margin-top:30px;}
 	- 추가
 	.btn_loginNaver{display:inline-block; margin-top:35px;}
 */
+/*
+기존코드_border 삭제
 .box-login{padding:30px 0 0 132px; border-bottom:2px solid #898987; height: 266px;}
+*/
+.box-login{padding:30px 0 50px 132px; height: 266px;}
 .btn_loginNaver{display:inline-block; margin-top:35px;}
 
 /* E [U20201223] 네이버 로그인 버튼추가 */
@@ -2812,7 +2816,7 @@ div[class^="sect-"] .btn-itemmore{ margin-top:30px;}
 /* E [U20201223] 네이버 로그인 버튼추가 */
 
 .box-login fieldset > .login-option a {background-position:right 4px !important;}
-.sect-login > .box-login fieldset .save-id {position:absolute; top:166px; left:-3px}
+.sect-login > .box-login fieldset .save-id {position:absolute; top:197px; left:-3px}
 /* S [U20201223] 네이버 로그인 버튼추가
 	Description:
 	- 아이디 저장 마우스 오버시 손가락모양으로 변경

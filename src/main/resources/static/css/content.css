@@ -795,7 +795,7 @@
 .mt15 {margin-top:15px;}
 .sect-box-descri.cjone .box-polaroid {background-color:#f8f8f8; border:1px solid #cfcdc3;}
 .sect-box-descri.cjone .box-inner > h4 {width:112px; height:31px; background:url(../images/title/h4_cjone_logo.png) no-repeat 1px 1px; font:0/0 a; visibility:visible; zoom:1;}
-.sect-box-descri.cjone .box-inner {width:744px; padding:33px 26px 37px;}
+.sect-box-descri.cjone .box-inner {width:744px; padding:0px 30px 60px; height:50px; font-size:larger;}
 .sect-box-descri.cjone .box-inner > ul > li {margin:10px 0 0 0; padding:0; border:0 none;}
 .sect-box-descri.cjone .box-inner > ul > li:first-child {margin-top:0;}
 
