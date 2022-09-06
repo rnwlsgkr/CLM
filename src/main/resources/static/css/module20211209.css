@@ -353,7 +353,7 @@ div[class^="sect-"] .btn-itemmore{ margin-top:30px;}
 .btn-report{ height:11px; background:url('../images/sprite/sprite_icon.png') -200px -28px no-repeat;}
 
 /* Paging Button */
-.btn-paging{display:inline-block; min-width:56px; min-height:40px; margin:0 2px; font-weight:500; font-size:14px; color:#222; background:url('../images/sprite/btn_paging.gif') no-repeat; border:1px solid #d8d8d8}
+.btn-paging{display:inline-block; min-width:56px; min-height:40px; margin:0 2px; font-weight:500; font-size:14px; color:#222; background:url('../images/btn_paging.gif') no-repeat; border:1px solid #d8d8d8}
 .btn-paging.dim{ color:#b0afa9;cursor:default}
 .btn-paging.prev{margin-right:16px;  padding:0 10px 0 24px; vertical-align:top; background-position:2px 7px; border-radius:4px}
 .btn-paging.prev.dim{ background-position: 2px -19px;}

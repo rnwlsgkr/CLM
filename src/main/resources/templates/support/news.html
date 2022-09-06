@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="ko"
+	  xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorate="~{layouts/layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  	
+  	<th:block layout:fragment="css">
+		<link rel="stylesheet" th:href="@{/css/reset.css}" >
+		<link rel="stylesheet" th:href="@{/css/common.css}" >
+		<link rel="stylesheet" th:href="@{/css/layout.css}" >
+		<link rel="stylesheet" th:href="@{/css/content.css}" >
+		<link rel="stylesheet" th:href="@{/css/module20211209.css}" >
+		<link rel="stylesheet" th:href="@{/css/customer.css}" >
+		<link rel="stylesheet" th:href="@{/css/eggupdate.css}" >
+		 > 
+	</th:block>	
+</head>
+
+
+<body layout:fragment="content" class="" style="">
+
+<div id="cgvwrap">
+
+	<!-- Contaniner -->
+	<div id="contaniner" class=""><!-- 벽돌 배경이미지 사용 시 class="bg-bricks" 적용 / 배경이미지가 없을 경우 class 삭제  -->
+
+		<!-- Contents Area -->
+<div id="contents">
+	<!-- Contents Start -->
+	<div class="cols-content">
+		
+		<div class="col-aside">
+		    <h2>
+		        고객센터 메뉴</h2>
+		    <div class="snb">
+		        <ul>
+		            <li class="on"><a href="/support/support_home">고객센터 메인<i></i></a></li>
+		            <li class=""><a href="/support/faq" >자주찾는 질문<i></i></a></li>
+		            <li class=""><a href="/support/news">공지/뉴스<i></i></a></li>
+            		<li class=""><a href="/support/qna">문의 게시판<i></i></a></li>
+		          
+		        </ul>
+		    </div>
+		    
+		</div>
+		
+		
+		<div class="col-detail">
+			<div class="customer_top">
+				<h2 class="tit">공지/뉴스</h2>
+				<p class="stit">CLM의 주요한 이슈 및 여러가지 소식들을 확인하실 수 있습니다.</p>
+			</div>
+			<div class="search_area">
+				<legend><label for="c_select">검색</label></legend>
+				<select name="selsearchfield" id="selsearchfield" class="c_select" style="width:100px;" selected="selected">
+					<option selected="selected" value="0">제목</option>
+					<option value="1">내용</option>
+				</select>
+				<label for="searchtext" class="hidden">검색어 입력</label>
+				<input id="searchtext" type="text" class="c_input" title="검색어 입력" placeholder="검색어를 입력해 주세요" style="width:185px;" value="">
+				<button type="button" class="round inblack" title="검색하기" id="btn_search"><span>검색하기</span></button>
+			</div>
+			<div class="c_tab_wrap">
+				<ul class="c_tab">
+					<li class="on"><a href="/support/news/default.aspx?type=&amp;searchtext=" title="선택된 탭메뉴">전체</a></li>
+					<li class=""><a href="/support/news/default.aspx?type=1&amp;searchtext=">시스템점검</a></li>
+					<li class=""><a href="/support/news/default.aspx?type=2&amp;searchtext=">극장</a></li>
+					<li class=""><a href="/support/news/default.aspx?type=4&amp;searchtext=">기타</a></li>
+				</ul>
+			</div>
+			<div class="search_result">
+                  총<span class="num">2852건</span>이 검색되었습니다.
+			</div>
+			<div class="tbl_area">
+				<table cellspacing="0" cellpadding="0" class="tbl_notice_list">
+				<caption>목록</caption>
+				<colgroup>
+					<col style="width:70px;">
+                    <col style="width:160px;">
+					<col style="">
+					<col style="width:140px;">
+					<col style="width:120px">
+				</colgroup>
+				<thead>
+					<tr>
+					<th scope="col">번호</th>
+                    <th scope="col">구분</th>
+					<th scope="col" class="tit">제목</th>
+					<th scope="col">등록일</th>
+					<th scope="col">조회수</th>
+					</tr>
+				</thead>
+				<tbody>
+                
+					    <tr class="first">
+						    <td>2852</td>
+                            <td>[기타]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7916&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=4">2022년 9월 VIP 선정일자 한시적 변경 안내</a></td>
+						    <td>2022.08.30</td>
+						    <td class="num">5</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2851</td>
+                            <td>[시스템점검]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7914&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=1">2022년 8월 시스템 점검 안내</a></td>
+						    <td>2022.08.22</td>
+						    <td class="num">2362</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2850</td>
+                            <td>[극장]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7913&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=2">CGV제주 주차장 공사 안내 件</a></td>
+						    <td>2022.08.19</td>
+						    <td class="num">2931</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2849</td>
+                            <td>[극장]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7912&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=2">[CGV대구스타디움] &lt;싸이-흠뻑쇼&gt; 로인한 교통혼잡 안내</a></td>
+						    <td>2022.08.13</td>
+						    <td class="num">4246</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2848</td>
+                            <td>[행사/이벤트]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7911&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=3">CAV 스페셜 키링 증정 이벤트 수령 극장 안내 </a></td>
+						    <td>2022.08.11</td>
+						    <td class="num">4767</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2847</td>
+                            <td>[행사/이벤트]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7909&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=3">[DC 리그 오브 슈퍼-펫] 스피드 쿠폰 수량표기 오류 관련 안내</a></td>
+						    <td>2022.07.29</td>
+						    <td class="num">7293</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2846</td>
+                            <td>[극장]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7908&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=2">[CGV오리] 입점건물 리뉴얼 공사로 인한 임시 휴업 안내 (8/8(월) ~ )</a></td>
+						    <td>2022.07.26</td>
+						    <td class="num">8063</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2845</td>
+                            <td>[기타]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7906&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=4">2022 원데이 프리패스 및 스페셜 기프트 혜택 관련 사전 안내 </a></td>
+						    <td>2022.07.04</td>
+						    <td class="num">11921</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2844</td>
+                            <td>[극장]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7905&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=2">[CGV대구한일] 7/9(토)~7/10(일) 교통통제 안내</a></td>
+						    <td>2022.07.02</td>
+						    <td class="num">12628</td>
+					    </tr>
+                    
+					    <tr class="first">
+						    <td>2843</td>
+                            <td>[기타]</td>
+						    <td class="txt"><a href="/support/news/detail-view.aspx?idx=7904&amp;page=1&amp;searchtext=&amp;searchfield=0&amp;type=4">CGV NFT Wallet iOS 서비스 이용 제한 안내</a></td>
+						    <td>2022.06.27</td>
+						    <td class="num">13705</td>
+					    </tr>
+                    
+                    
+				</tbody>
+				</table>
+			</div>
+			<!--?xml version="1.0" encoding="utf-8"?-->
+			<div class="paging">
+			  <ul>
+			    <li class="on">
+			      <a title="1 페이지 선택" href=" #pg">1</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=2&amp;type=&amp;searchtext=&amp;searchfield=0">2</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=3&amp;type=&amp;searchtext=&amp;searchfield=0">3</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=4&amp;type=&amp;searchtext=&amp;searchfield=0">4</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=5&amp;type=&amp;searchtext=&amp;searchfield=0">5</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=6&amp;type=&amp;searchtext=&amp;searchfield=0">6</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=7&amp;type=&amp;searchtext=&amp;searchfield=0">7</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=8&amp;type=&amp;searchtext=&amp;searchfield=0">8</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=9&amp;type=&amp;searchtext=&amp;searchfield=0">9</a>
+			    </li>
+			    <li>
+			      <a href="/support/news/default.aspx?page=10&amp;type=&amp;searchtext=&amp;searchfield=0">10</a>
+			    </li>
+			  </ul>
+			  <button class="btn-paging next" type="button" onclick="location='/support/news/default.aspx?page=11&amp;type=&amp;searchtext=&amp;searchfield=0'">다음</button>
+			  <button class="btn-paging end" type="button" onclick="location='/support/news/default.aspx?page=143&amp;type=&amp;searchtext=&amp;searchfield=0'">끝</button>
+			</div>
+		</div>
+
+
+	</div>
+	<!-- //Contents End -->
+</div>
+
+            
+            <!--/ Contents End -->
+		 </div>
+		<!-- /Contents Area -->
+	</div>
+    <!-- E Contaniner -->
+    
+    
+    <!-- S 예매하기 및 TOP Fixed 버튼 -->
+    <div class="fixedBtn_wrap">
+     
+        <a href="/ticket/" class="btn_fixedTicketing">예매하기</a>
+        
+        <a href="#none" class="btn_gotoTop"><img src="https://img.cgv.co.kr/R2014/images/common/btn/gotoTop.png" alt="최상단으로 이동"></a>
+    </div>
+    
+    <!-- E 예매하기 및 TOP Fixed 버튼 -->
+	
+    
+
+
+
+</body>
+
+</html>
