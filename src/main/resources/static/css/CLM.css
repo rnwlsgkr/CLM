@@ -35,17 +35,23 @@ a {
 		.nav .contents{position:relative}
 		.nav .contents h1{display:none}
 			.nav_menu{display:inline-flex}
+/*SH수정 네브바 underline 간격 기존			
 			.nav_menu > li{width:162px; padding:20px 0}
 			.nav_menu > li:first-child{width:137px;}
+*/			
+			.nav_menu > li{width:122px; padding:20px 0}
+			.nav_menu > li:first-child{width:97px;}
+			
 			.nav_menu > li:first-child .nav_overMenu{padding-left:0}
 			.nav_menu > li:first-child .nav_overMenu:before{content:none}
 			.nav_menu > li:last-child{width:195px}
 			.nav_menu > li:nth-child(2) > h2{left:80px}
 			.nav_menu > li:nth-child(3) > h2{left:160px}
 			.nav_menu > li:nth-child(4) > h2{left:240px}
-			.nav_menu > li:last-child > h2{left:335px}
+/*SH수정*/	.nav_menu > li:last-child > h2{left:250px} /* 기존 left:335px;  */
 			.nav_menu > li > h2{position:absolute; top:7px}
 			.nav_menu > li > h2 > a{font-weight:500; font-size:16px; color:#222; line-height:2.0em}
+
 			/* .nav_menu > li > h2 > a:hover{text-decoration:underline} */
 			.nav_menu > li > h2 > a strong{font-weight:700; color:#fb4357}
 				.nav_overMenu{display:none; position:relative; margin-bottom:8px; padding:25px 0 0 25px}
@@ -86,12 +92,14 @@ a {
 		.nav.fixed .contents h1{display:block; position:absolute; left:0; top:1px; width:70px; height:32px; z-index:3}
 		.nav.fixed .contents h1 a{display:block} 
 		.nav.fixed .contents h1 a img{width:100%; height:100%}
+
 		.nav.fixed .contents .nav_menu > li:first-child > h2{left:120px}
 		.nav.fixed .contents .nav_menu > li:nth-child(2) > h2{left:200px}
 		.nav.fixed .contents .nav_menu > li:nth-child(3) > h2{left:280px}
 		.nav.fixed .contents .nav_menu > li:nth-child(4) > h2{left:360px}
 		.nav.fixed .contents .nav_menu > li:nth-child(5) > h2{left:455px}
 		.nav.fixed .contents .nav_menu > li:last-child > h2{left:550px}
+		
 		.nav.fixed .contents .nav_menu > li > h2 > a{color:#fff}
 		.nav.fixed .contents .nav_menu > li > h2 > a strong{color:#fff}
 		.nav.fixed .contents .totalSearch_wrap:before,

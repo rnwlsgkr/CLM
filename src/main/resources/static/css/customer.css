@@ -29,7 +29,7 @@
 
 
 /* Default */
-.tbl_notice_list a {display:block;width:540px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;  }
+.tbl_notice_list a {display:block;width:310px;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;  }
 .search_area{overflow:hidden;margin-top:20px;}
 .search_input{float:left;}
 .search_input .c_select, .search_input .c_input{margin-right:6px;background-color:#fdfcf0;}

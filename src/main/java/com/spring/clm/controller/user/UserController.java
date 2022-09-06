@@ -1,6 +1,7 @@
 package com.spring.clm.controller.user;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -94,6 +95,16 @@ public class UserController {
 	}
 	
 	// E mypage ************************************************************
+	
+	@PostMapping
+	public ModelAndView join() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/user/login.html");
+		
+		return mv;
+	}
+	
+	
 }
 
 
