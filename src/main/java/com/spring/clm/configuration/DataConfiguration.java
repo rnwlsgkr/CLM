@@ -1,6 +1,6 @@
 package com.spring.clm.configuration;
 
-import java.util.Properties;
+import java.util.Properties; 
 
 import javax.sql.DataSource;
 
@@ -24,7 +24,7 @@ import com.zaxxer.hikari.HikariDataSource;
 //classpath: src/main/resource
 @PropertySource("classpath:/application.properties")
 //Mapper 클래스 스캔할 경로
-@MapperScan(basePackages="com.spring.boardweb.mapper")
+@MapperScan(basePackages="com.spring.clm.mapper")
 public class DataConfiguration {
 	@Autowired
 	//스프링 컨테이너: 스프링 설정 파일등을 읽어와서 사용 가능
