@@ -1,6 +1,6 @@
 package com.spring.clm.configuration;
 
-import java.util.Properties; 
+import java.util.Properties;  
 
 import javax.sql.DataSource;
 
